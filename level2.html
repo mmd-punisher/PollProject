@@ -1,0 +1,3517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>بخش دوم سوالات سنجش درد عضلانی</title>
+
+    <!-- Favicons-->
+
+    <!-- GOOGLE WEB FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600"
+      rel="stylesheet"
+    />
+
+    <!-- BASE CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/menu.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/vendors.css" rel="stylesheet" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="static/css/custom.css" rel="stylesheet" />
+
+    <!-- MODERNIZR MENU -->
+    <script src="static/js/modernizr.js"></script>
+    <style>
+      @font-face {
+        font-family: "font1";
+        src: url("static/fonts/Vazir.woff2") format("woff2"),
+          url("fonts/Vazir.woff") format("woff");
+      }
+      * {
+        font-family: "font1";
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div data-loader="circle-side"></div>
+    </div>
+    <!-- /Preload -->
+
+    <div id="loader_form">
+      <div data-loader="circle-side-2"></div>
+    </div>
+    <!-- /loader_form -->
+
+    <nav>
+      <ul class="cd-primary-nav">
+        <li><a href="home.html" class="animated_link">خانه</a></li>
+        <li><a href="adminpage.html" class="animated_link">ورود ادمین</a></li>
+        <li><a href="about.html" class="animated_link">درباره ما</a></li>
+        <li><a href="contacts.html" class="animated_link">ارتباط با ما</a></li>
+      </ul>
+    </nav>
+    <!-- /menu -->
+
+    <div class="container-fluid full-height">
+      <div class="row row-height">
+        <div class="col-lg-6 content-left" id="left">
+          <div class="content-left-wrapper">
+            <div>
+              <figure>
+                <img src="static/img/info_graphic_5.svg" alt="" class="" />
+              </figure>
+              <h2>بخش دوم سوالات</h2>
+              <p>
+                پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا
+                در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
+                وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
+                گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و
+                چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ
+                و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
+                چپ به صورت خود گزارش دهی فراهم می‌کند
+              </p>
+              <a href="#0" class="btn_1 rounded"> بیشتر بدانید</a>
+              <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>
+            </div>
+            <div class="copy">طراحی و اجرا توسط ©</div>
+          </div>
+          <!-- /content-left-wrapper -->
+        </div>
+        <!-- /content-left -->
+
+        <div class="col-lg-6 content-right" id="start">
+          <div id="wizard_container">
+            <div id="top-wizard">
+              <div id="progressbar"></div>
+            </div>
+            <!-- /top-wizard -->
+            <form id="wrapped" method="POST">
+              <input id="website" name="website" type="text" value="" />
+              <!-- Leave for security protection, read docs for details -->
+              <div id="middle-wizard">
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/neck.png"
+                      id="neck"
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>گردن</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_neck"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_neck');"
+                        onclick="ShowNeck()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_neck"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                        onclick="ShowNeck()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_neck"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_neck');"
+                        onclick="ShowNeck()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_neck"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_neck');"
+                        onclick="ShowNeck()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_neck"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_neck');"
+                        onclick="ShowNeck()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="ShowNeck">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_neck"
+                          value="0"
+                          onchange="getVals(this, 'question_1_neck');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_neck"
+                          value="1"
+                          onchange="getVals(this, 'question_1_neck');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_neck"
+                          value="2"
+                          onchange="getVals(this, 'question_1_neck');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_neck"
+                            value="0"
+                            onchange="getVals(this, 'question_2_neck');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_neck"
+                            value="1"
+                            onchange="getVals(this, 'question_2_neck');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_neck"
+                            value="2"
+                            onchange="getVals(this, 'question_2_neck');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/R-shoulder.png"
+                      id="neck"
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>شانه راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Rshoulder"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Rshoulder');"
+                        onclick="ShowRshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rshoulder"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Rshoulder');"
+                        onclick="ShowRshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rshoulder"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Rshoulder');"
+                        onclick="ShowRshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Rshoulder"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Rshoulder');"
+                        onclick="ShowRshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Rshoulder"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Rshoulder');"
+                        onclick="ShowRshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Rshoulder">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Rshoulder"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Rshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Rshoulder"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Rshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Rshoulder"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Rshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_1_Rshoulder"
+                            value="0"
+                            onchange="getVals(this, 'question_1_Rshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_1_Rshoulder"
+                            value="1"
+                            onchange="getVals(this, 'question_1_Rshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_1_Rshoulder"
+                            value="2"
+                            onchange="getVals(this, 'question_1_Rshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/L-shoulder.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>شانه چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Lshoulder"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Lshoulder');"
+                        onclick="ShowLshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lshoulder"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Lshoulder');"
+                        onclick="ShowLshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lshoulder"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Lshoulder');"
+                        onclick="ShowLshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Lshoulder"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Lshoulder');"
+                        onclick="ShowLshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Lshoulder"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Lshoulder');"
+                        onclick="ShowLshoulder()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Lshoulder">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Lshoulder"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Lshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Lshoulder"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Lshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Lshoulder"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Lshoulder');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Lshoulder"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Lshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Lshoulder"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Lshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Lshoulder"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Lshoulder');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- /step-->
+
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/up-back.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>قسمت بالای کمر</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_UBack"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_UBack');"
+                        onclick="ShowUBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_UBack"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_UBack');"
+                        onclick="ShowUBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_UBack"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_UBack');"
+                        onclick="ShowUBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_UBack"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_UBack');"
+                        onclick="ShowUBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_UBack"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_UBack');"
+                        onclick="ShowUBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="UBack">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_UBack"
+                          value="0"
+                          onchange="getVals(this, 'question_1_UBack');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_UBack"
+                          value="1"
+                          onchange="getVals(this, 'question_1_UBack');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_UBack"
+                          value="2"
+                          onchange="getVals(this, 'question_1_UBack');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_UBack"
+                            value="0"
+                            onchange="getVals(this, 'question_2_UBack');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_UBack"
+                            value="1"
+                            onchange="getVals(this, 'question_2_UBack');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_UBack"
+                            value="2"
+                            onchange="getVals(this, 'question_2_UBack');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/back.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>کمر</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Back');"
+                        onclick="ShowBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Back');"
+                        onclick="ShowBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Back');"
+                        onclick="ShowBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Back');"
+                        onclick="ShowBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Back');"
+                        onclick="ShowBack()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Back">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Back"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Back');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Back"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Back');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Back"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Back');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Back"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Back');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Back"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Back');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Back"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Back');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/hip.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>باسن</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Hip"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Hip');"
+                        onclick="ShowHip()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Hip"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Hip');"
+                        onclick="ShowHip()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Hip"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Hip');"
+                        onclick="ShowHip()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Hip');"
+                        onclick="ShowHip()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Hip"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Hip');"
+                        onclick="ShowHip()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Hip">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Hip"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Hip');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Hip"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Hip');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Hip"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Hip');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Hip"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Hip');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Hip"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Hip');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Hip"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Hip');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/R-muscle.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>بازوی راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Rmuscle"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Rmuscle');"
+                        onclick="ShowRmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rmuscle"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Rmuscle');"
+                        onclick="ShowRmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rmuscle"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Rmuscle');"
+                        onclick="ShowRmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Rmuscle"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Rmuscle');"
+                        onclick="ShowRmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Rmuscle"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Rmuscle');"
+                        onclick="ShowRmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Rmuscle">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Rmuscle"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Rmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Rmuscle"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Rmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Rmuscle"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Rmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Rmuscle"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Rmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Rmuscle"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Rmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Rmuscle"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Rmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/L-muscle.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>بازوی چپ </strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Lmuscle"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Lmuscle');"
+                        onclick="ShowLmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lmuscle"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Lmuscle');"
+                        onclick="ShowLmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lmuscle"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Lmuscle');"
+                        onclick="ShowLmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Back"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Lmuscle');"
+                        onclick="ShowLmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Lmuscle"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Lmuscle');"
+                        onclick="ShowLmuscle()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Lmuscle">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Lmuscle"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Lmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Lmuscle"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Lmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Lmuscle"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Lmuscle');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Lmuscle"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Lmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Lmuscle"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Lmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Lmuscle"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Lmuscle');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/R-forearm.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ساعد راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Rforearm"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Rforearm');"
+                        onclick="ShowRforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rforearm"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Rforearm');"
+                        onclick="ShowRforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rforearm"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Rforearm');"
+                        onclick="ShowRforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Rforearm"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Rforearm');"
+                        onclick="ShowRforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Rforearm"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Rforearm');"
+                        onclick="ShowRforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Rforearm">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Rforearm"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Rforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Rforearm"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Rforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Rforearm"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Rforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Rforearm"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Rforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Rforearm"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Rforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Rforearm"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Rforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/L-forearm.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ساعد چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Lforearm"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Lforearm');"
+                        onclick="ShowLforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lforearm"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Lforearm');"
+                        onclick="ShowLforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lforearm"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Lforearm');"
+                        onclick="ShowLforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Lforearm"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Lforearm');"
+                        onclick="ShowLforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Lforearm"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Lforearm');"
+                        onclick="ShowLforearm()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Lforearm">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Lforearm"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Lforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Lforearm"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Lforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Lforearm"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Lforearm');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Lforearm"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Lforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Lforearm"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Lforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Lforearm"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Lforearm');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/R-Wrist.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>مچ دست راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_RWrist"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_RWrist');"
+                        onclick="ShowRWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_RWrist"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_RWrist');"
+                        onclick="ShowRWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_RWrist"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_RWrist');"
+                        onclick="ShowRWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_RWrist"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_RWrist');"
+                        onclick="ShowRWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_RWrist"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_RWrist');"
+                        onclick="ShowRWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="RWrist">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_RWrist"
+                          value="0"
+                          onchange="getVals(this, 'question_1_RWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_RWrist"
+                          value="1"
+                          onchange="getVals(this, 'question_1_RWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_RWrist"
+                          value="2"
+                          onchange="getVals(this, 'question_1_RWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_RWrist"
+                            value="0"
+                            onchange="getVals(this, 'question_2_RWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_RWrist"
+                            value="1"
+                            onchange="getVals(this, 'question_2_RWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_RWrist"
+                            value="2"
+                            onchange="getVals(this, 'question_2_RWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/L-Wrist.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>مچ دست چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_LWrist"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_LWrist');"
+                        onclick="ShowLWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_LWrist"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_LWrist');"
+                        onclick="ShowLWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_LWrist"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_LWrist');"
+                        onclick="ShowLWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_LWrist"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_LWrist');"
+                        onclick="ShowLWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_LWrist"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_LWrist');"
+                        onclick="ShowLWrist()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="LWrist">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_LWrist"
+                          value="0"
+                          onchange="getVals(this, 'question_1_LWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_LWrist"
+                          value="1"
+                          onchange="getVals(this, 'question_1_LWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_LWrist"
+                          value="2"
+                          onchange="getVals(this, 'question_1_LWrist');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_LWrist"
+                            value="0"
+                            onchange="getVals(this, 'question_2_LWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_LWrist"
+                            value="1"
+                            onchange="getVals(this, 'question_2_LWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_LWrist"
+                            value="2"
+                            onchange="getVals(this, 'question_2_LWrist');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/R-thigh.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ران راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Rthing"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Rthing');"
+                        onclick="ShowRthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rthing"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Rthing');"
+                        onclick="ShowRthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rthing"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Rthing');"
+                        onclick="ShowRthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Rthing"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Rthing');"
+                        onclick="ShowRthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Rthing"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Rthing');"
+                        onclick="ShowRthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Rthing">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Rthing"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Rthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Rthing"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Rthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Rthing"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Rthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Rthing"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Rthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Rthing"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Rthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Rthing"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Rthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img
+                      src="static/img/anatomy/L-thigh.png"
+                      id=""
+                      class="img-fluid"
+                    />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ران چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Lthing"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Lthing');"
+                        onclick="ShowLthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lthing"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Lthing');"
+                        onclick="ShowLthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lthing"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Lthing');"
+                        onclick="ShowLthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Lthing"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Lthing');"
+                        onclick="ShowLthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Lthing"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Lthing');"
+                        onclick="ShowLthing()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Lthing">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Lthing"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Lthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Lthing"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Lthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Lthing"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Lthing');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Lthing"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Lthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Lthing"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Lthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Lthing"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Lthing');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/R-leg.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ساعد پای راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_RLeg"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_RLeg');"
+                        onclick="ShowRLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_RLeg"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_RLeg');"
+                        onclick="ShowRLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_RLeg"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_RLeg');"
+                        onclick="ShowRLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_RLeg"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_RLeg');"
+                        onclick="ShowRLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_RLeg"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_RLeg');"
+                        onclick="ShowRLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="RLeg">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_RLeg"
+                          value="0"
+                          onchange="getVals(this, 'question_1_RLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_RLeg"
+                          value="1"
+                          onchange="getVals(this, 'question_1_RLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_RLeg"
+                          value="2"
+                          onchange="getVals(this, 'question_1_RLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_RLeg"
+                            value="0"
+                            onchange="getVals(this, 'question_2_RLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_RLeg"
+                            value="1"
+                            onchange="getVals(this, 'question_2_RLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_RLeg"
+                            value="2"
+                            onchange="getVals(this, 'question_2_RLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/L-leg.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>ساعد پای چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_LLeg"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_LLeg');"
+                        onclick="ShowLLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_LLeg"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_LLeg');"
+                        onclick="ShowLLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_LLeg"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_LLeg');"
+                        onclick="ShowLLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_LLeg"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_LLeg');"
+                        onclick="ShowLLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_LLeg"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_LLeg');"
+                        onclick="ShowLLeg()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="LLeg">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_LLeg"
+                          value="0"
+                          onchange="getVals(this, 'question_1_LLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_LLeg"
+                          value="1"
+                          onchange="getVals(this, 'question_1_LLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_LLeg"
+                          value="2"
+                          onchange="getVals(this, 'question_1_LLeg');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_LLeg"
+                            value="0"
+                            onchange="getVals(this, 'question_2_LLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_LLeg"
+                            value="1"
+                            onchange="getVals(this, 'question_2_LLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_LLeg"
+                            value="2"
+                            onchange="getVals(this, 'question_2_LLeg');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/static/img/anatomy/R-knee.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>زانوی راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_RKnee"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_RKnee');"
+                        onclick="ShowRKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_RKnee"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_RKnee');"
+                        onclick="ShowRKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_RKnee"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_RKnee');"
+                        onclick="ShowRKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_RKnee"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_RKnee');"
+                        onclick="ShowRKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_RKnee"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_RKnee');"
+                        onclick="ShowRKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="RKnee">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_RKnee"
+                          value="0"
+                          onchange="getVals(this, 'question_1_RKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_RKnee"
+                          value="1"
+                          onchange="getVals(this, 'question_1_RKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_RKnee"
+                          value="2"
+                          onchange="getVals(this, 'question_1_RKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_RKnee"
+                            value="0"
+                            onchange="getVals(this, 'question_2_RKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_RKnee"
+                            value="1"
+                            onchange="getVals(this, 'question_2_RKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_RKnee"
+                            value="2"
+                            onchange="getVals(this, 'question_2_RKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/L-knee.png" id="" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>زانوی چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_LKnee"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_LKnee');"
+                        onclick="ShowLKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_LKnee"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_LKnee');"
+                        onclick="ShowLKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_LKnee"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_LKnee');"
+                        onclick="ShowLKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_LKnee"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_LKnee');"
+                        onclick="ShowLKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_LKnee"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_LKnee');"
+                        onclick="ShowLKnee()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="LKnee">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_LKnee"
+                          value="0"
+                          onchange="getVals(this, 'question_1_LKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_LKnee"
+                          value="1"
+                          onchange="getVals(this, 'question_1_LKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_LKnee"
+                          value="2"
+                          onchange="getVals(this, 'question_1_LKnee');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_LKnee"
+                            value="0"
+                            onchange="getVals(this, 'question_2_LKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_LKnee"
+                            value="1"
+                            onchange="getVals(this, 'question_2_LKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_LKnee"
+                            value="2"
+                            onchange="getVals(this, 'question_2_LKnee');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/R-sole.png" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>مچ پای راست</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Rsole"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Rsole');"
+                        onclick="ShowRsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rsole"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Rsole');"
+                        onclick="ShowRsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Rsole"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Rsole');"
+                        onclick="ShowRsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Rsole"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Rsole');"
+                        onclick="ShowRsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Rsole"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Rsole');"
+                        onclick="ShowRsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Rsole">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Rsole"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Rsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Rsole"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Rsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Rsole"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Rsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Rsole"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Rsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Rsole"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Rsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Rsole"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Rsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- /step-->
+                <div class="step">
+                  <figure>
+                    <img src="static/img/anatomy/L-sole.png" class="img-fluid" />
+                  </figure>
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>مچ پای چپ</strong>طی هفته گذشته چند بار احساس درد در
+                    ناحیه مشخص شده داشته اید؟
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_Lsole"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_Lsole');"
+                        onclick="ShowLsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >یک یا دوبار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lsole"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_Lsole');"
+                        onclick="ShowLsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      سه یا چهار بار در هفته
+                      <input
+                        type="radio"
+                        name="question_Lsole"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_Lsole');"
+                        onclick="ShowLsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      روزی یک بار
+                      <input
+                        type="radio"
+                        name="question_Lsole"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_Lsole');"
+                        onclick="ShowLsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >روزی چند بار
+                      <input
+                        type="radio"
+                        name="question_Lsole"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_Lsole');"
+                        onclick="ShowLsole()"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="hidden" id="Lsole">
+                    <h3 class="main_question d-flex justify-content-end">
+                      اگر احساس ناراحتی و درد داشته اید ، میزان آن چقدر بوده
+                      است؟
+                    </h3>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >زیاد
+                        <input
+                          type="radio"
+                          name="question_1_Lsole"
+                          value="0"
+                          onchange="getVals(this, 'question_1_Lsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >متوسط
+                        <input
+                          type="radio"
+                          name="question_1_Lsole"
+                          value="1"
+                          onchange="getVals(this, 'question_1_Lsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-group d-flex justify-content-end">
+                      <label class="container_radio version_1"
+                        >جزئی
+                        <input
+                          type="radio"
+                          name="question_1_Lsole"
+                          value="2"
+                          onchange="getVals(this, 'question_1_Lsole');"
+                        />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div>
+                      <h3 class="main_question d-flex justify-content-end">
+                        اگر درد، ناراحتی را تجربه کردید، آیا در کارتان اختلال
+                        ایجاد کرده است؟
+                      </h3>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >زیاد
+                          <input
+                            type="radio"
+                            name="question_2_Lsole"
+                            value="0"
+                            onchange="getVals(this, 'question_2_Lsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >کم
+                          <input
+                            type="radio"
+                            name="question_2_Lsole"
+                            value="1"
+                            onchange="getVals(this, 'question_2_Lsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="form-group d-flex justify-content-end">
+                        <label class="container_radio version_1"
+                          >یه هیچ وجه
+                          <input
+                            type="radio"
+                            name="question_2_Lsole"
+                            value="2"
+                            onchange="getVals(this, 'question_2_Lsole');"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /step-->
+                <!-- /step-->
+                <!-- /step-->
+                <!-- /step-->
+                <!-- /step-->
+                <!-- /step-->
+
+                <div class="submit step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong></strong>اتمام بخش دوم
+                  </h3>
+                  <div class="summary d-flex justify-content-end">
+                    <h5>با تشکر از صبر و توجه شما به سوالات</h5>
+                    <h5>جهت ثبت اطلاعات وارد شده لطفا دکمه تایید را بقشارید</h5>
+                  </div>
+                </div>
+                <!-- /step-->
+              </div>
+              <!-- /middle-wizard -->
+              <div id="bottom-wizard">
+                <button type="button" name="backward" class="backward">
+                  قبلی
+                </button>
+                <button type="button" name="forward" class="forward">
+                  بعدی
+                </button>
+                <button type="submit" name="process" class="submit">
+                  تایید
+                </button>
+              </div>
+              <!-- /bottom-wizard -->
+            </form>
+          </div>
+          <!-- /Wizard container -->
+        </div>
+        <!-- /content-right-->
+      </div>
+      <!-- /row-->
+    </div>
+    <!-- /container-fluid -->
+
+    <div class="cd-overlay-nav">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+    <!-- /menu button -->
+
+    <!-- Modal terms -->
+    <!-- /.modal-dialog -->
+
+    <!-- /.modal -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/common_scripts.min.js"></script>
+    <script src="static/js/velocity.min.js"></script>
+    <script src="static/js/functions.js"></script>
+
+    <!-- Wizard script -->
+    <script src="static/js/review_func.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پرسشنامه جامع کرنل</title>
+
+    <!-- GOOGLE WEB FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600"
+      rel="stylesheet"
+    />
+
+    <!-- BASE CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/menu.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/vendors.css" rel="stylesheet" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="static/css/custom.css" rel="stylesheet" />
+
+    <!-- MODERNIZR MENU -->
+    <script src="static/js/modernizr.js"></script>
+  </head>
+  <style>
+    @font-face {
+      font-family: "font1";
+      src: url("static/fonts/Vazir.woff2") format("woff2"),
+        url("fonts/Vazir.woff") format("woff");
+    }
+    * {
+      font-family: "font1";
+    }
+
+  </style>
+
+  <body>
+    <div id="preloader">
+      <div data-loader="circle-side"></div>
+    </div>
+    <!-- /Preload -->
+
+    <div id="loader_form">
+      <div data-loader="circle-side-2"></div>
+    </div>
+    <!-- /loader_form -->
+
+    <nav>
+      <ul class="cd-primary-nav">
+        <li><a href="index.html" class="animated_link">خانه</a></li>
+        <li><a href="adminpage.html" class="animated_link">ورود ادمین</a></li>
+        <li><a href="about.html" class="animated_link">درباره ما</a></li>
+        <li><a href="contacts.html" class="animated_link">ارتباط با ما</a></li>
+      </ul>
+    </nav>
+    <!-- /menu -->
+
+    <div class="container-fluid full-height">
+      <div class="row row-height">
+        <div class="col-lg-6 content-left" id="left">
+          <div class="content-left-wrapper">
+            <div>
+              <figure>
+                <img src="static/img/info_graphic_1.svg" alt="" class="" />
+              </figure>
+              <h2>پرسشنامه کرنل</h2>
+              <p>
+                پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا
+                در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
+                وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
+                گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و
+                چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ
+                و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
+                چپ به صورت خود گزارش دهی فراهم می‌کند
+              </p>
+              <a href="#0" class="btn_1 rounded">بیشتر بدانید</a>
+              <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>
+            </div>
+            <div class="copy">© 2023 CMDQ</div>
+          </div>
+          <!-- /content-left-wrapper -->
+        </div>
+        <!-- /content-left -->
+
+        <div class="col-lg-6 content-right" id="start">
+          <div id="wizard_container">
+            <div id="top-wizard">
+              <div id="progressbar"></div>
+            </div>
+            <!-- /top-wizard -->
+            <form id="wrapped" method="POST">
+              <input id="website" name="website" type="text" value="" />
+              <!-- Leave for security protection, read docs for details -->
+              <div id="middle-wizard">
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>1/17</strong>لطفا اطلاعات حود را تکمیل کنید
+                  </h3>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="firstname"
+                      class="form-control required"
+                      placeholder="نام"
+                    />
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="lastname"
+                      class="form-control required"
+                      placeholder="نام خانوادگی"
+                    />
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="location-s"
+                      class="form-control required"
+                      placeholder="استان"
+                    />
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="location-c"
+                      class="form-control required"
+                      placeholder="شهرستان"
+                    />
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="compony"
+                      class="form-control required"
+                      placeholder="نام شرکت/موسسه/سازمان"
+                    />
+                  </div>
+                  <div class="form-group justify-content-start">
+                    <div class="styled-select clearfix">
+                      <select class="wide required" name="country" dir="rtl">
+                        <option value="">تحصیلات</option>
+                        <option value="Europe">سیکل</option>
+                        <option value="Asia">دیپلم</option>
+                        <option value="North America">لیسانس</option>
+                        <option value="South America">فوق لیسانس</option>
+                        <option value="Oceania">دکتری</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="job"
+                      class="form-control required"
+                      placeholder="شغل"
+                      dir="rtl"
+                    />
+                  </div>
+                  <div class="form-group" id="workly">
+                    <input
+                      type="number"
+                      name="workly"
+                      class="form-control required"
+                      placeholder="سابقه کار"
+                      dir="rtl"
+                    />
+                  </div>
+
+                  <div class="form-group justify-content-start">
+                    <div class="styled-select clearfix">
+                      <select class="wide required" name="marriage" dir="rtl">
+                        <option value="">وضعیت تاهل</option>
+                        <option value="male">مجرد</option>
+                        <option value="female">متاهل</option>
+                        <option value="female">مطلقه</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="form-group" dir="rtl" id="age">
+                        <input
+                          type="number"
+                          name="age"
+                          class="form-control"
+                          placeholder="سن"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group" dir="rtl" id="tall">
+                        <input
+                          type="number"
+                          name="tall"
+                          class="form-control"
+                          placeholder="قد"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-3" dir="rtl" id="weight">
+                      <div class="form-group">
+                        <input
+                          type="number"
+                          name="weight"
+                          class="form-control"
+                          placeholder="وزن"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-9">
+                      <div
+                        class="form-group radio_input d-flex justify-content-end"
+                      >
+                        <label class="container_radio"
+                          >مرد
+                          <input
+                            type="radio"
+                            name="gender"
+                            value="Male"
+                            class="required"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="container_radio"
+                          >زن
+                          <input
+                            type="radio"
+                            name="gender"
+                            value="Female"
+                            class="required"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /row -->
+                </div>
+                <!-- /step-->
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>2/17</strong>ایستاده برای مدت طولانی
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_1"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_1"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_1"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_1"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_1"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_1');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group" dir="rtl">
+                    <input
+                      type="text"
+                      name="compony"
+                      class="form-control "
+                      placeholder="چند ساعت در روز"
+                    />
+                </div>
+                <!-- /step-->
+
+                <!-- /step-->
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>3/17</strong>راه رفتن برای مدت طولانی
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_2"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_2');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_2"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_2');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_2"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_2');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_2"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_2');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_2"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_2');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>4/17</strong>زانو زده / چمباتمه برای طولانی مدت
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_3"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_3');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_3"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_3');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_3"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_3');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_3"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_3');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_3"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_3');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>5/17</strong>کار با دستان بالای سطح شانه
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_4"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_4');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_4"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_4');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_4"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_4');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_4"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_4');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_4"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_4');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>6/17</strong>کار با دستان زیر سطح زانو
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_5"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_5');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_5"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_5');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_5"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_5');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_5"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_5');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_5"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_5');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>7/17</strong>بلند کردن/پایین آوردن بارهای بیش از 20
+                    کیلوگرم
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_6"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_6');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_6"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_6');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_6"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_6');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_6"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_6');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_6"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_6');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>8/17</strong>هل دادن/کشیدن/حمل کردن بارهای بیش از 20
+                    کیلوگرم
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_7"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_7');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_7"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_7');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_7"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_7');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_7"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_7');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_7"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_7');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>9/17</strong>کار در وضعیت های ناراحت
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_8"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_8');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_8"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_8');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_8"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_8');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_8"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_8');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_8"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_8');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>10/17</strong>کار کردن در یک وضعیت به مدت طولانی
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_9"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_9');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_9"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_9');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_9"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_9');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_9"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_9');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_9"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_9');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>11/17</strong>انجام وظایف تکراری چند بار در دقیقه
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_10"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_10');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_10"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_10');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_10"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_10');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_10"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_10');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_10"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_10');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>12/17</strong>فعالیتهایی که نیاز به اعمال زور دست و
+                    بازو دارند
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_11"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_11');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_11"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_11');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_11"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_11');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_11"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_11');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_11"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_11');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>13/17</strong>فعالیتهایی که نیاز به بالا تنه خمیده
+                    به مدت طولانی دارند
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_12"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_12');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_12"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_12');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_12"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_12');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_12"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_12');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_12"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_12');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>14/17</strong>فعالیتهایی که نیاز به بالا تنه پیچ
+                    خورده به مدت طولانی دارند
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_13"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_13');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_13"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_13');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_13"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_13');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_13"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_13');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_13"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_13');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>15/17</strong>بالا رفتن از پله ها
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_14"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_14');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_14"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_14');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_14"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_14');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_14"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_14');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_14"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_14');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>16/17</strong>استفاده از پدال توسط پاها
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_15"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_15');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_15"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_15');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_15"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_15');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_15"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_15');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_15"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_15');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong>17/17</strong>نشسته برای مدت طولانی
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >هرگز
+                      <input
+                        type="radio"
+                        name="question_16"
+                        value="0"
+                        class="required"
+                        onchange="getVals(this, 'question_16');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >به ندرت
+                      <input
+                        type="radio"
+                        name="question_16"
+                        value="1"
+                        class="required"
+                        onchange="getVals(this, 'question_16');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >گاهی اوقات
+                      <input
+                        type="radio"
+                        name="question_16"
+                        value="2"
+                        class="required"
+                        onchange="getVals(this, 'question_16');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1">
+                      اغلب
+                      <input
+                        type="radio"
+                        name="question_16"
+                        value="3"
+                        class="required"
+                        onchange="getVals(this, 'question_16');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div class="form-group d-flex justify-content-end">
+                    <label class="container_radio version_1"
+                      >همیشه
+                      <input
+                        type="radio"
+                        name="question_16"
+                        value="4"
+                        class="required"
+                        onchange="getVals(this, 'question_16');"
+                      />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="submit step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong></strong>پایان مرحله اول سوالات
+                  </h3>
+                </div>
+              </div>
+              <!-- /middle-wizard -->
+              <div id="bottom-wizard">
+                <button type="button" name="backward" class="backward">
+                  قبلی
+                </button>
+                <button type="button" name="forward" class="forward">
+                  بعدی
+                </button>
+                <button type="submit" name="process" class="submit" ><a href="level2.html"></a>
+                  تایید
+                </button>
+              </div>
+              <!-- /bottom-wizard -->
+            </form>
+          </div>
+          <!-- /Wizard container -->
+        </div>
+        <!-- /content-right-->
+      </div>
+      <!-- /row-->
+    </div>
+    <!-- /container-fluid -->
+
+    <div class="cd-overlay-nav">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <a href="#0" class="cd-nav-trigger"><span class="cd-icon"></span></a>
+    <!-- /menu button -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/common_scripts.min.js"></script>
+    <script src="static/js/velocity.min.js"></script>
+    <script src="static/js/functions.js"></script>
+
+    <!-- Wizard script -->
+    <script src="static/js/survey_func.js"></script>
+  </body>
+</html>

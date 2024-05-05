@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه ورود ادمین</title>
+
+    <!-- Favicons-->
+
+    <!-- GOOGLE WEB FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600"
+      rel="stylesheet"
+    />
+
+    <!-- BASE CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/menu.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/vendors.css" rel="stylesheet" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="static/css/custom.css" rel="stylesheet" />
+
+    <!-- MODERNIZR MENU -->
+    <script src="static/js/modernizr.js"></script>
+  </head>
+  <style>
+    @font-face {
+      font-family: "font1";
+      src: url("static/fonts/Vazir.woff2") format("woff2"),
+        url("fonts/Vazir.woff") format("woff");
+    }
+    * {
+      font-family: "font1";
+    }
+  </style>
+  <body>
+    
+    <!-- /Preload -->
+
+    <div id="loader_form">
+      <div data-loader="circle-side-2"></div>
+    </div>
+    <!-- /loader_form -->
+
+    <nav>
+      <ul class="cd-primary-nav">
+        <li><a href="home.html" class="animated_link">خانه</a></li>
+        <li><a href="adminpage.html" class="animated_link">ورود ادمین</a></li>
+        <li><a href="about.html" class="animated_link">درباره ما</a></li>
+        <li><a href="contacts.html" class="animated_link">ارتباط با ما</a></li>
+      </ul>
+    </nav>
+    <!-- /menu -->
+
+    <div class="container-fluid full-height">
+      <div class="row row-height">
+        <div class="col-lg-6 content-left">
+          <div class="content-left-wrapper">
+            <div>
+              <figure>
+                <img src="img/info_graphic_2.svg" alt="" class="" />
+              </figure>
+              <h2>ورود ادمین</h2>
+              <a href="home.html" class="btn_1 rounded">بازگشت به صفحه اصلی</a>
+              <a href="home.html" class="btn_1 rounded mobile_btn"
+                >بازگشت به صفحه اصلی</a
+              >
+            </div>
+            <div class="copy">طراحی و اجرا توسط ©</div>
+          </div>
+          <!-- /content-left-wrapper -->
+        </div>
+        <!-- /content-left -->
+
+        <div class="col-lg-6 content-right" id="start">
+          <div id="wizard_container">
+            <div id="top-wizard">
+              <div id="progressbar"></div>
+            </div>
+            <!-- /top-wizard -->
+            <form id="wrapped" method="POST">
+              <input id="website" name="website" type="text" value="" />
+              <!-- Leave for security protection, read docs for details -->
+              <div id="middle-wizard">
+                <div class="step">
+                  <h3 class="main_question d-flex justify-content-end">
+                    <strong></strong>لطفا اطلاعات حود را وارد کنید
+                  </h3>
+                  <div class="form-group d-flex justify-content-end">
+                    <input
+                      type="text"
+                      name="user_name"
+                      class="form-control required"
+                      placeholder="نام کاربری"
+                      onchange="getVals(this, 'user_name');"
+                    />
+                  </div>
+                  <div class="form-group d-flex justify-content-end">
+                    <input
+                      class="form-control required"
+                      type="password"
+                      id="password1"
+                      name="password1"
+                      placeholder="رمز عبور"
+                      onchange="getVals(this, 'password');"
+                    />
+                  </div>
+                  <div class="form-group terms">
+                    <label class="container_check"
+                      >مرا به خاطر بسپار
+                      <input type="checkbox" name="terms" value="Yes" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+                <!-- /step-->
+                <!-- /step-->
+                <div class="submit step">
+                  <h3 class="main_question"><strong></strong>خوش امدید</h3>
+                  <div class="summary">
+                    <h5>جهت ادامه کلید تایید را بزنید</h5>
+                    <ul>
+                      <li><label></label><span> حساب شما</span></li>
+                      <li><label></label><span id="user_name"></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /step-->
+              </div>
+              <!-- /middle-wizard -->
+              <div id="bottom-wizard">
+                <button type="button" name="backward" class="backward">
+                  قبلی
+                </button>
+                <button type="button" name="forward" class="forward">
+                  بعدی
+                </button>
+                <button type="submit" name="process" class="submit">
+                  تایید
+                </button>
+              </div>
+              <!-- /bottom-wizard -->
+            </form>
+          </div>
+          <!-- /Wizard container -->
+        </div>
+        <!-- /content-right-->
+      </div>
+      <!-- /row-->
+    </div>
+    <!-- /container-fluid -->
+
+    <div class="cd-overlay-nav">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <a href="#0" class="cd-nav-trigger"><span class="cd-icon"></span></a>
+    <!-- /menu button -->
+
+    <!-- Modal terms -->
+
+    <!-- /.modal -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/common_scripts.min.js"></script>
+    <script src="static/js/velocity.min.js"></script>
+    <script src="static/js/functions.js"></script>
+    <script src="static/js/pw_strenght.js"></script>
+
+    <!-- Wizard script -->
+    <script src="static/js/registration_func.js"></script>
+  </body>
+</html>

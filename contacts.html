@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Ansonika" />
+    <title>ارتباط با ما</title>
+
+    <!-- BASE CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/menu.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/vendors.css" rel="stylesheet" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="static/css/custom.css" rel="stylesheet" />
+
+    <!-- MODERNIZR MENU -->
+    <script src="static/js/modernizr.js"></script>
+  </head>
+  <style>
+    @font-face {
+      font-family: "font1";
+      src: url("static/fonts/Vazir.woff2") format("woff2"),
+        url("fonts/Vazir.woff") format("woff");
+    }
+    * {
+      font-family: "font1";
+    }
+  </style>
+
+  <body>
+    <div id="preloader">
+      <div data-loader="circle-side"></div>
+    </div>
+    <!-- /Preload -->
+
+    <div id="loader_form">
+      <div data-loader="circle-side-2"></div>
+    </div>
+    <!-- /loader_form -->
+
+    <header>
+      <div class="container-fluid">
+        <div class="col-9">
+          <a href="#0" class="cd-nav-trigger"><span class="cd-icon"></span></a>
+          <!-- /menu button -->
+          <nav>
+            <ul class="cd-primary-nav">
+              <li><a href="home.html" class="animated_link">خانه</a></li>
+              <li>
+                <a href="adminpage.html" class="animated_link">ورود ادمین</a>
+              </li>
+              <li><a href="about.html" class="animated_link">درباره ما</a></li>
+              <li>
+                <a href="contacts.html" class="animated_link">ارتباط با ما</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /menu -->
+        </div>
+      </div>
+      <!-- /container -->
+    </header>
+    <!-- /Header -->
+
+    <main id="general_page">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25581.53680611641!2d53.541863485289014!3d36.729955284667895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f84e78bcd1281b1%3A0xa1df9c6e4a7b786a!2z2K_Yp9mG2LTar9in2Ycg2LnZhNmFINmIINmB2YbYp9mI2LHbjCDZhdin2LLZhtiv2LHYp9mG!5e0!3m2!1sfa!2s!4v1703149986311!5m2!1sfa!2s"
+        width="600"
+        height="450"
+        allowfullscreen
+        id="map_iframe"
+      ></iframe>
+      <!-- end map-->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3 class="d-flex justify-content-start">ارتباط با ما</h3>
+            <p class="d-flex justify-content-start">
+              از این قسمت برای ما تیکت ارسال کنید
+            </p>
+            <div>
+              <div id="message-contact"></div>
+              <form method="post" action="assets/contact.php" id="contactform">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group justify-content-center">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name_contact"
+                        name="name_contact"
+                        placeholder="نام"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastname_contact"
+                        name="lastname_contact"
+                        placeholder="نام حانوادگی"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        id="email_contact"
+                        name="email_contact"
+                        class="form-control"
+                        placeholder="ایمیل"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        id="phone_contact"
+                        name="phone_contact"
+                        class="form-control"
+                        placeholder="شماره تلفن"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea
+                        rows="5"
+                        id="message_contact"
+                        name="message_contact"
+                        class="form-control"
+                        style="height: 100px"
+                        placeholder="پیام شما"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" name="process" class="submit">
+                  ارسال
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- End col lg 9 -->
+
+          <!--End aside -->
+        </div>
+        <!-- end row-->
+      </div>
+      <!-- end container-->
+    </main>
+
+    <footer class="clearfix">
+      <div class="container">
+        <p>طراحی و اجرا توسط ©</p>
+      </div>
+    </footer>
+    <!-- end footer-->
+
+    <div class="cd-overlay-nav">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/common_scripts.min.js"></script>
+    <script src="static/js/velocity.min.js"></script>
+    <script src="static/js/functions.js"></script>
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="static/assets/validate.js"></script>
+  </body>
+</html>
