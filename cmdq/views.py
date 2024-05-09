@@ -5,12 +5,11 @@ from .models import User, Question, Vote
 
 
 def user_login(request):
-    # ورود یا ایجاد کاربر جدید
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            request.session['user_id'] = user.pk  # ذخیره شناسه کاربر در سشن
+            request.session['user_id'] = user.pk
             return redirect('poll', question_id=1)
     else:
         form = UserForm()
@@ -20,8 +19,8 @@ def user_login(request):
 def poll_view(request, question_id):
     user_id = request.session.get('user_id')
     if not user_id:
-        return redirect('user_login')  # اگر کاربر وارد نشده باشد، به صفحه ورود هدایت می‌شود
-    user = get_object_or_404(User, pk=user_id)  # استخراج نمونه کاربر از پایگاه داده
+        return redirect('user_login')
+    user = get_object_or_404(User, pk=user_id)
     question = get_object_or_404(Question, pk=question_id)
     try:
         # تلاش برای یافتن رأی قبلی
