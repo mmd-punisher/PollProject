@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>نظرسنجی</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">ثبت پاسخ و ادامه</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+# views.py
+from django.shortcuts import get_object_or_404, redirect, render
+from .forms import UserForm, VoteForm
+from .models import User, Question, Vote
+
+
+def user_login(request):
+    # ورود یا ایجاد کاربر جدید
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            request.session['user_id'] = user.pk  # ذخیره شناسه کاربر در سشن
+            return redirect('poll', question_id=1)
+    else:
+        form = UserForm()
+    return render(request, 'cmdq/login.html', {'form': form})
+
+
+def poll_view(request, question_id):
+    user_id = request.session.get('user_id')
+    if not user_id:
+        return redirect('user_login')  # اگر کاربر وارد نشده باشد، به صفحه ورود هدایت می‌شود
+    user = get_object_or_404(User, pk=user_id)  # استخراج نمونه کاربر از پایگاه داده
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        # تلاش برای یافتن رأی قبلی
+        previous_vote = Vote.objects.get(user=user, question=question)
+        form = VoteForm(instance=previous_vote, question_id=question_id)
+    except Vote.DoesNotExist:
+        form = VoteForm(question_id=question_id)
+    if request.method == 'POST':
+        form = VoteForm(request.POST, question_id=question_id)
+        if form.is_valid():
+            vote = form.save(commit=False)
+            vote.question = question
+            vote.user = user
+            vote.save()
+            next_question = Question.objects.filter(pk__gt=question_id).first()
+            if next_question:
+                return redirect('poll', question_id=next_question.pk)
+            else:
+                return redirect('complete')
+    return render(request, 'cmdq/poll.html', {'form': form, 'question': question, 'user': user})
+
+
+def complete_view(request):
+    return render(request, 'cmdq/complete.html', {'message': "Thank you for completing the survey!"})
+
+# def poll_view(request, question_id):
+#     question = get_object_or_404(Question, pk=question_id)
+#     if request.method == 'POST':
+#         form = VoteForm(request.POST, question_id=question_id)
+#         if form.is_valid():
+#             vote = form.save(commit=False)
+#             vote.question = question
+#             vote.user = request.user
+#             vote.save()
+#             next_question = Question.objects.filter(pk__gt=question_id).first()
+#             if next_question:
+#                 return redirect('poll', question_id=next_question.pk)
+#             else:
+#                 return redirect('complete')
+#     else:
+#         form = VoteForm(question_id=question_id)
+#     return render(request, 'cmdq/poll.html', {'form': form, 'question': question})
