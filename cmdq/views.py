@@ -4,6 +4,10 @@ from .forms import UserForm, VoteForm
 from .models import User, Question, Vote
 
 
+def index(request):
+    return redirect('user_login')
+
+
 def user_login(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -23,7 +27,6 @@ def poll_view(request, question_id):
     user = get_object_or_404(User, pk=user_id)
     question = get_object_or_404(Question, pk=question_id)
     try:
-        # تلاش برای یافتن رأی قبلی
         previous_vote = Vote.objects.get(user=user, question=question)
         form = VoteForm(instance=previous_vote, question_id=question_id)
     except Vote.DoesNotExist:
@@ -45,21 +48,3 @@ def poll_view(request, question_id):
 
 def complete_view(request):
     return render(request, 'cmdq/complete.html', {'message': "Thank you for completing the survey!"})
-
-# def poll_view(request, question_id):
-#     question = get_object_or_404(Question, pk=question_id)
-#     if request.method == 'POST':
-#         form = VoteForm(request.POST, question_id=question_id)
-#         if form.is_valid():
-#             vote = form.save(commit=False)
-#             vote.question = question
-#             vote.user = request.user
-#             vote.save()
-#             next_question = Question.objects.filter(pk__gt=question_id).first()
-#             if next_question:
-#                 return redirect('poll', question_id=next_question.pk)
-#             else:
-#                 return redirect('complete')
-#     else:
-#         form = VoteForm(question_id=question_id)
-#     return render(request, 'cmdq/poll.html', {'form': form, 'question': question})
