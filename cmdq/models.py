@@ -17,13 +17,20 @@ class User(models.Model):
         ("si", "مجرد"),
         ("di", "مطلقه"),
     ]
+    JOB_CAT = [
+        ('off', 'اداری'),
+        ('eng', 'فنی'),
+        ('pro', 'تولید'),
+        ('ser', 'خدمات'),
+    ]
     first_name = models.CharField(max_length=255, verbose_name="نام")
     last_name = models.CharField(max_length=255, verbose_name="نام خانوادگی")
     age = models.PositiveSmallIntegerField(verbose_name='سن',
                                            validators=[MinValueValidator(10, message='حداقل سن 10 سال است'),
                                                        MaxValueValidator(150,
                                                                          message='سن بیشتر از 150 سال قابل قبول نیست')])
-    job = models.CharField(max_length=255, null=True, verbose_name='شغل')
+    # job = models.CharField(max_length=255, null=True, verbose_name='شغل')
+    job = models.CharField(max_length=3, choices=JOB_CAT, verbose_name='رسته شغلی', null=True, blank=True)
     work_experience = models.PositiveSmallIntegerField(default=0, null=True, verbose_name='سابقه شغلی',
                                                        validators=[MaxValueValidator(
                                                            60,
