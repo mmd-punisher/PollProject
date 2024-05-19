@@ -32,7 +32,9 @@
     * {
       font-family: "font1";
     }
-
+    .error {
+            border: 2px solid red;
+        }
   </style>
 
   <body>
@@ -158,6 +160,17 @@
                       dir="rtl"
                     />
                   </div>
+                  <div class="form-group justify-content-start">
+                    <div class="styled-select clearfix">
+                      <select class="wide required" name="jobtype" dir="rtl">
+                        <option value="">رسته کاری</option>
+                        <option value="edari">اداری</option>
+                        <option value="fani">فنی</option>
+                        <option value="youlid">تولید</option>
+                        <option value="khadamat">خدمات </option>
+                      </select>
+                    </div>
+                  </div>
                   <div class="form-group" id="workly">
                     <input
                       type="number"
@@ -180,7 +193,7 @@
                   </div>
                   <div class="row">
                     <div class="col-3">
-                      <div class="form-group" dir="rtl" id="age">
+                      <div class="form-group" dir="rtl" id="age" >
                         <input
                           type="number"
                           name="age"

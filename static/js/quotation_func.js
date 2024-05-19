@@ -106,3 +106,16 @@ function getVals(formControl, controlType) {
 			break;
 	}
 }
+document.addEventListener('DOMContentLoaded', function() {
+	const ageInput = document.querySelector('#age-container input[name="age"]');
+
+	ageInput.addEventListener('input', function() {
+		const age = parseInt(ageInput.value, 10);
+
+		if (isNaN(age) || age < 10 || age > 90) {
+			ageInput.classList.add('error');
+		} else {
+			ageInput.classList.remove('error');
+		}
+	});
+});

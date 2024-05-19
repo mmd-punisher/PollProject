@@ -537,7 +537,7 @@ input#website {
 .img-fluid {
   position: absolute;
   width: 90px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   left: 30px;
 }
 
@@ -560,7 +560,7 @@ input#website {
 }
 
 h3.main_question {
-  margin: 0 0 20px 0;
+  margin: 125px 0 20px 0;
   padding: 0;
   font-weight: 700;
   font-size: 13px;
