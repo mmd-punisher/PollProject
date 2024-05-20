@@ -1177,7 +1177,7 @@ span.error {
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-size: 12px;
+  font-size: 10px;
   position: absolute;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1192,6 +1192,7 @@ span.error {
   font-weight: normal;
   display: inline-block;
   padding: 6px 8px;
+  width: 153px;
 }
 
 span.error:after {
