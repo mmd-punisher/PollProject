@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'cmdq_project.urls'
@@ -86,7 +87,10 @@ DATABASES = {
         'NAME': 'cmdq_poll_db',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Mohammad_M22'
+        'PASSWORD': 'Mohammad_M22',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
     }
 }
 
@@ -131,9 +135,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_CHARSET = 'utf-8'
-FILE_CHARSET = 'utf-8'
-LANGUAGE_CODE = 'fa'
+# DEFAULT_CHARSET = 'utf-8'
+# FILE_CHARSET = 'utf-8'
+# LANGUAGE_CODE = 'fa'
+# TIME_ZONE = 'Asia/Tehran'
+# USE_I18N = True
+# USE_L10N = True
+# USE_TZ = True
+
+LANGUAGE_CODE = 'fa-ir'
 TIME_ZONE = 'Asia/Tehran'
 USE_I18N = True
 USE_L10N = True

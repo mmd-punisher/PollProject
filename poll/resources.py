@@ -1,18 +1,12 @@
 from import_export import fields, resources
-from import_export.formats.base_formats import XLSX
-from tablib import Dataset
-
 from poll.models import Vote
-
-
-class UTF8XLSX(XLSX):
-    def export_data(self, dataset, **kwargs):
-        response = super().export_data(dataset, **kwargs)
-        response.encoding = 'utf-8'
-        return response
+from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
+from datetime import datetime, timedelta
 
 
 class VoteResource(resources.ModelResource):
+    # For exporting to csv
     user = fields.Field(
         attribute='user', column_name='User')
     user_organ = fields.Field(
@@ -42,7 +36,7 @@ class VoteResource(resources.ModelResource):
         return obj.user.organ
 
     def dehydrate_user_job_category(self, obj):
-        return obj.user.job_category
+        return obj.user.get_job_category_display()
 
     def dehydrate_user_job(self, obj):
         return obj.user.job
@@ -55,3 +49,39 @@ class VoteResource(resources.ModelResource):
 
     def dehydrate_date(self, obj):
         return obj.date
+
+
+# ---------------------------- use filter in output
+
+"""
+class DateRangeFilter(admin.SimpleListFilter):
+    title = _('تاریخ')
+    parameter_name = 'date'
+
+    def lookups(self, request, model_admin):
+        return [
+            ('today', _('امروز')),
+            ('yesterday', _('روز گذشته')),
+            ('past_7_days', _('هفت روز گذشته')),
+            ('this_month', _('این ماه')),
+            ('past_30_days', _('سی روز گذشته')),
+        ]
+
+    def queryset(self, request, queryset):
+        today = datetime.now().date()
+        if self.value() == 'today':
+            return queryset.filter(date__date=today)
+        elif self.value() == 'yesterday':
+            yesterday = today - timedelta(days=1)
+            return queryset.filter(date__date=yesterday)
+        elif self.value() == 'past_7_days':
+            start_date = today - timedelta(days=7)
+            return queryset.filter(date__date__gte=start_date)
+        elif self.value() == 'this_month':
+            start_date = today.replace(day=1)
+            return queryset.filter(date__date__gte=start_date)
+        elif self.value() == 'past_30_days':
+            start_date = today - timedelta(days=30)
+            return queryset.filter(date__date__gte=start_date)
+        return queryset
+"""

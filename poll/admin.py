@@ -1,13 +1,10 @@
-from datetime import datetime, timedelta
-from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from import_export import resources, fields
-from import_export.widgets import ForeignKeyWidget
-from .models import Vote, UserModel, Question, Choice
-from django.utils.translation import gettext_lazy as _
-from import_export.formats.base_formats import CSV, XLSX
-
 from .resources import VoteResource
+from django.contrib import admin
+from import_export import resources, fields
+from import_export.admin import ExportMixin
+from .models import UserModel, Question, Choice, Vote
+from import_export.widgets import Widget
 
 admin.site.site_header = 'پنل مدیریت CMDQ'
 admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
@@ -15,14 +12,77 @@ admin.site.index_title = 'به پنل مدیریت نظرسنجی ادمین خ�
 
 
 # ----------- user admin
-@admin.register(UserModel)
-class UserAdmin(admin.ModelAdmin):
+# @admin.register(UserModel)
+# class UserAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
+#         'marital_status', 'height', 'weight', 'bmi', 'comment')
+#     list_filter = ('job', 'education', 'marital_status', 'organ')
+#     search_fields = ('first_name', 'last_name')
+#     ordering = ('first_name', 'last_name')
+
+
+class QuestionWidget(Widget):
+    def __init__(self, question):
+        self.question = question
+
+    def render(self, value, obj=None):
+        vote = Vote.objects.filter(user=obj, question=self.question).first()
+        if vote and vote.choice:
+            return vote.choice.choice_text
+        return "No answer"
+
+
+class UserResource(resources.ModelResource):
+    class Meta:
+        model = UserModel
+        fields = (
+            'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
+            'marital_status', 'height', 'weight', 'bmi', 'comment'
+        )
+
+    def __init__(self, *args, **kwargs):
+        super(UserResource, self).__init__(*args, **kwargs)
+        questions = Question.objects.all()
+        for question in questions:
+            field_name = f"question_{question.id}"
+            self.fields[field_name] = fields.Field(
+                column_name=question.question_title,
+                attribute=None,
+                widget=QuestionWidget(question)
+            )
+
+
+class UserAdmin(ExportMixin, admin.ModelAdmin):
+    resource_class = UserResource
     list_display = (
         'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
-        'marital_status', 'height', 'weight', 'bmi', 'comment')
+        'marital_status', 'height', 'weight', 'bmi', 'comment'
+    )
     list_filter = ('job', 'education', 'marital_status', 'organ')
     search_fields = ('first_name', 'last_name')
     ordering = ('first_name', 'last_name')
+
+    def __init__(self, *args, **kwargs):
+        super(UserAdmin, self).__init__(*args, **kwargs)
+        questions = Question.objects.all()
+        for question in questions:
+            field_name = f"question_{question.id}"
+            self.list_display += (field_name,)
+            setattr(self, field_name, self._generate_question_display(question))
+
+    def _generate_question_display(self, question):
+        def question_display(obj):
+            vote = Vote.objects.filter(user=obj, question=question).first()
+            if vote and vote.choice:
+                return vote.choice.choice_text
+            return "No answer"
+
+        question_display.short_description = question.question_title
+        return question_display
+
+
+admin.site.register(UserModel, UserAdmin)
 
 
 # ------------- question admin
@@ -42,45 +102,6 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
     list_display = ('question_title', 'question_text', 'pub_date')
     ordering = ('id',)
-
-
-# class VoteResource(resources.ModelResource):
-#     user_first_name = fields.Field(
-#         column_name='نام',
-#         attribute='user',
-#         widget=ForeignKeyWidget(UserModel, 'first_name'))
-#     user_last_name = fields.Field(
-#         column_name='نام خانوادگی',
-#         attribute='user',
-#         widget=ForeignKeyWidget(UserModel, 'last_name'))
-#     user_organ = fields.Field(
-#         column_name='نام سازمان',
-#         attribute='user',
-#         widget=ForeignKeyWidget(UserModel, 'organ'))
-#     user_job_category = fields.Field(
-#         column_name='رسته شغلی',
-#         attribute='user',
-#         widget=ForeignKeyWidget(UserModel, 'job_category'))
-#     question_title = fields.Field(
-#         column_name='عنوان سوال',
-#         attribute='question',
-#         widget=ForeignKeyWidget(Question, 'question_title'))
-#     choice_text = fields.Field(
-#         column_name='متن گزینه',
-#         attribute='choice',
-#         widget=ForeignKeyWidget(Choice, 'choice_text'))
-#     vote_date = fields.Field(
-#         column_name='تاریخ رای',
-#         attribute='date')
-#
-#     class Meta:
-#         model = Vote
-#         fields = (
-#             'user_first_name', 'user_last_name', 'user_organ', 'user_job_category', 'question_title', 'choice_text',
-#             'vote_date')
-#         export_order = (
-#             'user_first_name', 'user_last_name', 'user_organ', 'user_job_category', 'question_title', 'choice_text',
-#             'vote_date')
 
 
 # --------------------- custom filters
@@ -113,102 +134,35 @@ class UserJobCategoryFilter(admin.SimpleListFilter):
         return queryset
 
 
-class VoteDateFilter(admin.SimpleListFilter):
-    title = _('تاریخ رای')
-    parameter_name = 'date'
-
-    def lookups(self, request, model_admin):
-        return [
-            ('today', _('امروز')),
-            ('yesterday', _('دیروز')),
-            ('last_3_days', _('سه روز گذشته')),
-            ('this_week', _('این هفته')),
-            ('this_month', _('این ماه')),
-            ('this_year', _('امسال')),
-            ('past_7_days', _('هفته گذشته')),
-            ('last_month', _('ماه گذشته')),
-            ('last_year', _('سال گذشته')),
-        ]
-
-    def queryset(self, request, queryset):
-        value = self.value()
-        today = datetime.today()
-        if value == 'today':
-            return queryset.filter(date__year=today.year, date__month=today.month, date__day=today.day)
-        elif value == 'yesterday':
-            yesterday = today - timedelta(days=1)
-            return queryset.filter(date__year=yesterday.year, date__month=yesterday.month, date__day=yesterday.day)
-        elif value == 'last_3_days':
-            return queryset.filter(date__gte=today - timedelta(days=3))
-        elif value == 'past_7_days':
-            return queryset.filter(date__gte=today - timedelta(days=7))
-        elif value == 'last_month':
-            first_day_of_current_month = today.replace(day=1)
-            last_day_of_last_month = first_day_of_current_month - timedelta(days=1)
-            first_day_of_last_month = last_day_of_last_month.replace(day=1)
-            return queryset.filter(date__gte=first_day_of_last_month, date__lt=first_day_of_current_month)
-        elif value == 'last_year':
-            first_day_of_current_year = today.replace(month=1, day=1)
-            last_day_of_last_year = first_day_of_current_year - timedelta(days=1)
-            first_day_of_last_year = last_day_of_last_year.replace(month=1, day=1)
-            return queryset.filter(date__gte=first_day_of_last_year, date__lt=first_day_of_current_year)
-        elif value == 'this_week':
-            start_of_week = today - timedelta(days=today.weekday())
-            return queryset.filter(date__gte=start_of_week, date__lte=today)
-        elif value == 'this_month':
-            start_of_month = today.replace(day=1)
-            return queryset.filter(date__gte=start_of_month, date__lte=today)
-        elif value == 'this_year':
-            start_of_year = today.replace(month=1, day=1)
-            return queryset.filter(date__gte=start_of_year, date__lte=today)
-        return queryset
-
-
-# --------------- vote admin
-
-# class VoteResource(resources.ModelResource):
-#     user_ = fields.Field(attribute='user', column_name='کاربر')
-#     user_organ_ = fields.Field(column_name='نام سازمان')
-#     user_job_category_ = fields.Field(column_name='رسته شعلی')
-#     user_job_ = fields.Field(column_name='شغل')
-#     question_title_ = fields.Field(column_name='عنوان سوال')
-#     choice_ = fields.Field(column_name='انتخاب')
-#     date_ = fields.Field(column_name='تاریخ')
+# --------------- vote admin (Worked Without Filtering)
+# export btn
+# @admin.register(Vote)
+# class VoteAdmin(ImportExportModelAdmin):
+#     resource_class = VoteResource
+#     list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date')
+#     list_filter = (UserOrganFilter, UserJobCategoryFilter, VoteDateFilter)
+#     ordering = ('-date',)
 #
-#     class Meta:
-#         model = Vote
-#         fields = ('user_', 'user_organ_', 'user_job_category_', 'user_job_', 'question_title_', 'choice_', 'date_')
-#
-#     encoding = 'utf-8'
-#
-#     def dehydrate_user_(self, obj):
-#         return obj.user.first_name + ' ' + obj.user.last_name
-#
-#     def dehydrate_user_organ_(self, obj):
-#         return obj.user.organ
-#
-#     def dehydrate_user_job_category_(self, obj):
-#         return obj.user.job_category.value
-#
-#     def dehydrate_user_job_(self, obj):
+#     def user_job(self, obj):
 #         return obj.user.job
 #
-#     def dehydrate_question_title_(self, obj):
-#         return obj.question.question_title
+#     user_job.short_description = 'شغل'
 #
-#     def dehydrate_choice_(self, obj):
-#         return obj.choice.choice_text
+#     def user_organ(self, obj):
+#         return obj.user.organ
 #
-#     def dehydrate_date_(self, obj):
-#         return obj.date.strftime('%Y-%m-%d')
-
-
+#     user_organ.short_description = 'نام سازمان'
+#
+#     def user_job_category(self, obj):
+#         return obj.user.get_job_category_display()
+#
+#     user_job_category.short_description = 'رسته شغلی'
 
 @admin.register(Vote)
 class VoteAdmin(ImportExportModelAdmin):
     resource_class = VoteResource
     list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date')
-    list_filter = (UserOrganFilter, UserJobCategoryFilter, VoteDateFilter)
+    list_filter = ('user__organ', 'user__job_category', 'date')
     ordering = ('-date',)
 
     def user_job(self, obj):
@@ -225,3 +179,47 @@ class VoteAdmin(ImportExportModelAdmin):
         return obj.user.get_job_category_display()
 
     user_job_category.short_description = 'رسته شغلی'
+
+    def get_export_queryset(self, request):
+        qs = super().get_export_queryset(request)
+        return self.get_queryset(request).filter(pk__in=qs)
+
+# export action (not good)
+
+# @admin.register(Vote)
+# class VoteAdmin(admin.ModelAdmin):
+#     list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date')
+#     list_filter = (UserOrganFilter, UserJobCategoryFilter, VoteDateFilter)
+#     ordering = ('-date',)
+#     actions = ['export_as_csv']
+#
+#     def export_as_csv(self, request, queryset):
+#         meta = self.model._meta
+#         field_names = [field.name for field in meta.fields]
+#
+#         response = HttpResponse(content_type='text/csv')
+#         response['Content-Disposition'] = 'attachment; filename={}.csv'.format(meta)
+#         writer = csv.writer(response)
+#
+#         writer.writerow(field_names)
+#         for obj in queryset:
+#             row = writer.writerow([getattr(obj, field) for field in field_names])
+#
+#         return response
+#
+#     export_as_csv.short_description = "خروجی اکسل"
+#
+#     def user_job(self, obj):
+#         return obj.user.job
+#
+#     user_job.short_description = 'شغل'
+#
+#     def user_organ(self, obj):
+#         return obj.user.organ
+#
+#     user_organ.short_description = 'نام سازمان'
+#
+#     def user_job_category(self, obj):
+#         return obj.user.get_job_category_display()
+#
+#     user_job_category.short_description = 'رسته شغلی'
