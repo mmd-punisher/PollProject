@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pip = "*"
+install = "*"
+django-import-export = "*"
+mysqlclient = "*"
+django-admin-rangefilter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
