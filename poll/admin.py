@@ -1,4 +1,4 @@
-from import_export.admin import ImportExportModelAdmin
+"""from import_export.admin import ImportExportModelAdmin
 from .resources import VoteResource
 from django.contrib import admin
 from import_export import resources, fields
@@ -11,36 +11,22 @@ admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
 admin.site.index_title = 'به پنل مدیریت نظرسنجی ادمین خوش آمدید'
 
 
-# ----------- user admin
-# @admin.register(UserModel)
-# class UserAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
-#         'marital_status', 'height', 'weight', 'bmi', 'comment')
-#     list_filter = ('job', 'education', 'marital_status', 'organ')
-#     search_fields = ('first_name', 'last_name')
-#     ordering = ('first_name', 'last_name')
-
-
 class QuestionWidget(Widget):
     def __init__(self, question):
         self.question = question
 
+    def clean(self, value, row=None, *args, **kwargs):
+        return value
+
     def render(self, value, obj=None):
-        vote = Vote.objects.filter(user=obj, question=self.question).first()
-        if vote and vote.choice:
+        vote = Vote.objects.filter(user=obj.user, question=self.question).first()
+        # print(vote)
+        if vote is not None and vote.choice is not None:
             return vote.choice.choice_text
         return "No answer"
 
 
 class UserResource(resources.ModelResource):
-    class Meta:
-        model = UserModel
-        fields = (
-            'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
-            'marital_status', 'height', 'weight', 'bmi', 'comment'
-        )
-
     def __init__(self, *args, **kwargs):
         super(UserResource, self).__init__(*args, **kwargs)
         questions = Question.objects.all()
@@ -48,9 +34,28 @@ class UserResource(resources.ModelResource):
             field_name = f"question_{question.id}"
             self.fields[field_name] = fields.Field(
                 column_name=question.question_title,
-                attribute=None,
+                attribute=field_name,
                 widget=QuestionWidget(question)
             )
+
+    def dehydrate(self, obj):
+        print("Dehydrate called")  # پیام چاپ برای دیباگ
+        data = super(UserResource, self).dehydrate(obj)
+        questions = Question.objects.all()
+        for question in questions:
+            field_name = f"question_{question.id}"
+            vote = Vote.objects.filter(user=obj, question=question).first()
+            data[field_name] = vote.choice.choice_text if vote and vote.choice else "No answer"
+        data['marital_status'] = obj.get_marital_status_display()
+        return data
+
+    class Meta:
+        model = UserModel
+        fields = (
+            'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
+            'marital_status', 'height', 'weight', 'bmi', 'comment'
+        )
+        export_order = fields
 
 
 class UserAdmin(ExportMixin, admin.ModelAdmin):
@@ -85,7 +90,7 @@ class UserAdmin(ExportMixin, admin.ModelAdmin):
 admin.site.register(UserModel, UserAdmin)
 
 
-# ------------- question admin
+# ------------- Question Admin
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 5
@@ -104,7 +109,7 @@ class QuestionAdmin(admin.ModelAdmin):
     ordering = ('id',)
 
 
-# --------------------- custom filters
+# --------------------- Custom Filters
 
 class UserOrganFilter(admin.SimpleListFilter):
     title = 'نام سازمان'
@@ -158,6 +163,7 @@ class UserJobCategoryFilter(admin.SimpleListFilter):
 #
 #     user_job_category.short_description = 'رسته شغلی'
 
+# -------------------------- Vote Admin
 @admin.register(Vote)
 class VoteAdmin(ImportExportModelAdmin):
     resource_class = VoteResource
@@ -223,3 +229,61 @@ class VoteAdmin(ImportExportModelAdmin):
 #         return obj.user.get_job_category_display()
 #
 #     user_job_category.short_description = 'رسته شغلی'
+"""
+
+from django.contrib import admin
+from django.http import HttpResponse
+import csv
+
+from .models import UserModel, Question, Choice, Vote
+
+
+@admin.action(description='Export selected users to CSV')
+def export_users_to_csv(modeladmin, request, queryset):
+    # Define the CSV response
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=users.csv'
+
+    writer = csv.writer(response)
+    # Retrieve all questions to dynamically create columns for answers
+    questions = Question.objects.all()
+    question_titles = [q.question_title for q in questions]
+
+    # Write the header row
+    header = [
+                 'نام', 'نام خانوادگی', 'سن', 'رسته شغلی', 'شغل', 'نام سازمان',
+                 'سابقه شغلی', 'تحصیلات', 'وضعیت تعهد', 'قد (به سانتی متر)', 'وزن (به کیلوگرم)',
+                 'BMI', 'نظرات و پیشنهادات'
+             ] + question_titles
+    writer.writerow(header)
+
+    # Write the user data rows
+    for user in queryset:
+        user_data = [
+            user.first_name, user.last_name, user.age, user.get_job_category_display(),
+            user.job, user.organ, user.work_experience, user.get_education_display(),
+            user.get_marital_status_display(), user.height, user.weight,
+            user.bmi, user.comment
+        ]
+        # Add answers to the questions
+        for question in questions:
+            try:
+                vote = Vote.objects.get(user=user, question=question)
+                user_data.append(vote.choice.choice_text if vote.choice else (vote.box if vote.box else ''))
+            except Vote.DoesNotExist:
+                user_data.append('')
+
+        writer.writerow(user_data)
+
+    return response
+
+
+class UserModelAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'age', 'job_category', 'job', 'organ')
+    actions = [export_users_to_csv]
+
+
+admin.site.register(UserModel, UserModelAdmin)
+admin.site.register(Question)
+admin.site.register(Choice)
+admin.site.register(Vote)

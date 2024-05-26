@@ -100,3 +100,4 @@ class Vote(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
+
