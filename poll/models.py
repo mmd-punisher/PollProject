@@ -76,15 +76,23 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
+    CHOICE_FIELDS = [
+        ('0', 'هرگز'),
+        ('1', 'به ندرت'),
+        ('2', 'بعضی اوقات'),
+        ('3', 'اغلب'),
+        ('4', 'تقریبا همیشه'),
+    ]
     question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='سوال')
-    choice_text = models.CharField(max_length=150, verbose_name='متن گزینه ها')
+    # choice_text = models.CharField(max_length=150, verbose_name='متن گزینه ها')
+    choice_text = models.CharField(choices=CHOICE_FIELDS, max_length=1, verbose_name='متن گزینه ها')
 
     class Meta:
         verbose_name = 'انتخاب'
         verbose_name_plural = 'انتخاب ها'
 
     def __str__(self):
-        return self.choice_text
+        return dict(self.CHOICE_FIELDS).get(self.choice_text, self.choice_text)
 
 
 class Vote(models.Model):
@@ -100,4 +108,3 @@ class Vote(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
-
