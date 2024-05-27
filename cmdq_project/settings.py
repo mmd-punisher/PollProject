@@ -144,6 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # USE_TZ = True
 
 LANGUAGE_CODE = 'fa-ir'
+# LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Tehran'
 USE_I18N = True
 USE_L10N = True
