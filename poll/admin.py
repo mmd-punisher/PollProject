@@ -50,6 +50,7 @@ def export_users_to_csv(modeladmin, request, queryset):
     return response
 
 
+# ------------------------ User Admin
 class UserAdmin(admin.ModelAdmin):
     list_display = (
         'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
@@ -112,7 +113,7 @@ class VoteAdmin(admin.ModelAdmin):
         return self.get_queryset(request).filter(pk__in=qs)
 
 
-# ------------- Question Admin
+# ------------- Question Choice Init
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 5
@@ -120,6 +121,7 @@ class ChoiceInline(admin.TabularInline):
     verbose_name_plural = 'انتخاب ها'
 
 
+# ------------- Question Admin
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [

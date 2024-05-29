@@ -22,7 +22,7 @@ def user_login(request):
 
 
 """
-# First Implement
+# First Approach
 def poll_view(request, question_id):
     user_id = request.session.get('user_id')
     if not user_id:
