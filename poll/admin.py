@@ -10,7 +10,7 @@ admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
 admin.site.index_title = 'به پنل مدیریت نظرسنجی ادمین خوش آمدید'
 
 
-@admin.action(description='Export selected users to CSV')
+@admin.action(description='خروجی گرفتن (CSV)')
 def export_users_to_csv(modeladmin, request, queryset):
     # Define the CSV response
     response = HttpResponse(content_type='text/csv')
