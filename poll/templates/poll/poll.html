@@ -8,7 +8,7 @@
     <h1>{{ question.question_text }}</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <button type="submit">ثبت پاسخ و ادامه</button>
     </form>
 </body>

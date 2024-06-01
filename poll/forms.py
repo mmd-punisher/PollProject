@@ -11,7 +11,7 @@ class VoteForm(forms.ModelForm):
 
     class Meta:
         model = Vote
-        fields = ['choice']
+        fields = ['choice', 'box']
 
     def __init__(self, *args, **kwargs):
         question_id = kwargs.pop('question_id')

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -48,6 +48,7 @@ class UserModel(models.Model):
                                            MaxValueValidator(250, message='وزن وارد شده بیشتر از مقدار محدود شده است')])
     bmi = models.FloatField(null=True, blank=True, verbose_name='BMI')
     comment = models.CharField(null=True, blank=True, max_length=755, verbose_name='نظرات و پیشنهادات')
+    date_join = models.DateTimeField(default=datetime.now())
 
     class Meta:
         verbose_name = 'کاربر'
@@ -84,7 +85,6 @@ class Choice(models.Model):
         ('4', 'تقریبا همیشه'),
     ]
     question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='سوال')
-    # choice_text = models.CharField(max_length=150, verbose_name='متن گزینه ها')
     choice_text = models.CharField(choices=CHOICE_FIELDS, max_length=1, verbose_name='متن گزینه ها')
 
     class Meta:
@@ -100,7 +100,7 @@ class Vote(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='سوال')
     choice = models.ForeignKey(Choice, on_delete=models.CASCADE, verbose_name='انتخاب')
     date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ رای')
-    box = models.CharField(max_length=2, null=True, blank=True, verbose_name='تعداد ساعت کار')
+    box = models.PositiveSmallIntegerField(null=True, blank=True, verbose_name='تعداد ساعت کار')
 
     class Meta:
         verbose_name = 'رای'

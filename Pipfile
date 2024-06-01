@@ -9,6 +9,7 @@ install = "*"
 django-import-export = "*"
 mysqlclient = "*"
 django-admin-rangefilter = "*"
+pytz = "*"
 
 [dev-packages]
 

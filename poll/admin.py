@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.http import HttpResponse
-# from django.contrib.admin import DateFieldListFilter
-from rangefilter.filters import DateRangeFilter, DateTimeRangeFilter
+from rangefilter.filters import DateRangeFilter
 import csv
 from .models import UserModel, Question, Choice, Vote
 
@@ -17,16 +16,18 @@ def export_users_to_csv(modeladmin, request, queryset):
     response['Content-Disposition'] = 'attachment; filename=users.csv'
 
     writer = csv.writer(response)
-    # Retrieve all questions to dynamically create columns for answers
+    # Retrieve all questions to dynamically create columns for answers and hours
     questions = Question.objects.all()
-    question_titles = [q.question_title for q in questions]
 
     # Write the header row
     header = [
-                 'نام', 'نام خانوادگی', 'سن', 'رسته شغلی', 'شغل', 'نام سازمان',
-                 'سابقه شغلی', 'تحصیلات', 'وضعیت تعهد', 'قد (به سانتی متر)', 'وزن (به کیلوگرم)',
-                 'BMI', 'نظرات و پیشنهادات'
-             ] + question_titles
+        'نام', 'نام خانوادگی', 'سن', 'رسته شغلی', 'شغل', 'نام سازمان',
+        'سابقه شغلی', 'تحصیلات', 'وضعیت تعهد', 'قد (به سانتی متر)', 'وزن (به کیلوگرم)',
+        'BMI', 'نظرات و پیشنهادات'
+    ]
+    for question in questions:
+        header.append(question.question_title)
+        header.append(f"ساعت {question.question_title}")
     writer.writerow(header)
 
     # Write the user data rows
@@ -41,8 +42,10 @@ def export_users_to_csv(modeladmin, request, queryset):
         for question in questions:
             try:
                 vote = Vote.objects.get(user=user, question=question)
-                user_data.append(vote.choice.choice_text if vote.choice else (vote.box if vote.box else ''))
+                user_data.append(vote.choice.choice_text if vote.choice else '')
+                user_data.append(vote.box if vote.box else '')
             except Vote.DoesNotExist:
+                user_data.append('')
                 user_data.append('')
 
         writer.writerow(user_data)
@@ -50,7 +53,6 @@ def export_users_to_csv(modeladmin, request, queryset):
     return response
 
 
-# ------------------------ User Admin
 class UserAdmin(admin.ModelAdmin):
     list_display = (
         'first_name', 'last_name', 'age', 'job_category', 'job', 'organ', 'work_experience', 'education',
@@ -62,15 +64,17 @@ class UserAdmin(admin.ModelAdmin):
         ('vote__date', DateRangeFilter)
     )
     search_fields = ('first_name', 'last_name')
-    ordering = ('first_name', 'last_name')
+    ordering = ('date_join', 'first_name', 'last_name')
 
     def __init__(self, *args, **kwargs):
         super(UserAdmin, self).__init__(*args, **kwargs)
         questions = Question.objects.all()
         for question in questions:
             field_name = f"question_{question.id}"
-            self.list_display += (field_name,)
+            box_field_name = f"question_box_{question.id}"
+            self.list_display += (field_name, box_field_name)
             setattr(self, field_name, self._generate_question_display(question))
+            setattr(self, box_field_name, self._generate_box_display(question))
 
     def _generate_question_display(self, question):
         def question_display(obj):
@@ -81,6 +85,16 @@ class UserAdmin(admin.ModelAdmin):
 
         question_display.short_description = question.question_title
         return question_display
+
+    def _generate_box_display(self, question):
+        def box_display(obj):
+            vote = Vote.objects.filter(user=obj, question=question).first()
+            if vote and vote.box:
+                return vote.box
+            return "No hours"
+
+        box_display.short_description = f"ساعت سوال {question.question_title}"
+        return box_display
 
 
 admin.site.register(UserModel, UserAdmin)
