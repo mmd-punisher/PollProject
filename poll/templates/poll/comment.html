@@ -1,0 +1,10 @@
+{% extends "poll/base.html" %}
+
+{% block content %}
+  <h1>لطفاً نظر خود را وارد کنید</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ثبت</button>
+  </form>
+{% endblock %}

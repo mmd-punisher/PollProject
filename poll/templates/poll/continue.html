@@ -1,0 +1,8 @@
+{% extends "poll/base.html" %}
+
+{% block content %}
+  <h1>{{ message }}</h1>
+  <form action="{% url 'poll_2' question_id=1 %}" method="get">
+    <button type="submit">ادامه</button>
+  </form>
+{% endblock %}
