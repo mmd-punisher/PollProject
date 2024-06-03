@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from rangefilter.filters import DateRangeFilter
 import csv
-from .models import UserModel, Question, Choice, Vote
+from .models import UserModel, Question, Choice, Vote, Choice_2, Question_2, Vote_2
 
 admin.site.site_header = 'پنل مدیریت CMDQ'
 admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
@@ -100,10 +100,10 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(UserModel, UserAdmin)
 
 
-# -------------------------- Vote Admin
+"""# -------------------------- Vote Admin
 @admin.register(Vote)
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date')
+    list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date', 'box')
     list_filter = ('user__organ', 'user__job_category', 'date')
     ordering = ('-date',)
 
@@ -127,7 +127,33 @@ class VoteAdmin(admin.ModelAdmin):
         return self.get_queryset(request).filter(pk__in=qs)
 
 
-# ------------- Question Choice Init
+@admin.register(Vote_2)
+class VoteAdmin_2(admin.ModelAdmin):
+    list_display = ('user', 'user_organ', 'user_job_category', 'user_job', 'question', 'choice', 'date')
+    list_filter = ('user__organ', 'user__job_category', 'date')
+    ordering = ('-date',)
+
+    def user_job(self, obj):
+        return obj.user.job
+
+    user_job.short_description = 'شغل'
+
+    def user_organ(self, obj):
+        return obj.user.organ
+
+    user_organ.short_description = 'نام سازمان'
+
+    def user_job_category(self, obj):
+        return obj.user.get_job_category_display()
+
+    user_job_category.short_description = 'رسته شغلی'
+
+    def get_export_queryset(self, request):
+        qs = super().get_export_queryset(request)
+        return self.get_queryset(request).filter(pk__in=qs)
+"""
+
+# ------------- Question Admin
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 5
@@ -135,7 +161,13 @@ class ChoiceInline(admin.TabularInline):
     verbose_name_plural = 'انتخاب ها'
 
 
-# ------------- Question Admin
+class ChoiceInline_2(admin.TabularInline):
+    model = Choice_2
+    extra = 5
+    verbose_name = 'انتخاب'
+    verbose_name_plural = 'انتخاب ها'
+
+
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -143,5 +175,16 @@ class QuestionAdmin(admin.ModelAdmin):
         ('Date Information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [ChoiceInline]
+    list_display = ('question_title', 'question_text', 'pub_date')
+    ordering = ('id',)
+
+
+@admin.register(Question_2)
+class QuestionAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['question_title', 'question_text']}),
+        ('Date Information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+    ]
+    inlines = [ChoiceInline_2]
     list_display = ('question_title', 'question_text', 'pub_date')
     ordering = ('id',)

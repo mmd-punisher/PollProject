@@ -70,7 +70,7 @@ class Question(models.Model):
 
     class Meta:
         verbose_name = 'سوال'
-        verbose_name_plural = 'سوالات'
+        verbose_name_plural = 'سوالات سری اول'
 
     def __str__(self):
         return self.question_title
@@ -101,6 +101,52 @@ class Vote(models.Model):
     choice = models.ForeignKey(Choice, on_delete=models.CASCADE, verbose_name='انتخاب')
     date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ رای')
     box = models.PositiveSmallIntegerField(null=True, blank=True, verbose_name='تعداد ساعت کار')
+
+    class Meta:
+        verbose_name = 'رای'
+        verbose_name_plural = 'رای ها'
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
+
+
+class Question_2(models.Model):
+    question_title = models.CharField(max_length=255, verbose_name='عنوان سوال')
+    question_text = models.CharField(max_length=350, verbose_name='متن سوال')
+    pub_date = models.DateTimeField(default=datetime.now, verbose_name='تاریخ انتشار')
+
+    class Meta:
+        verbose_name = 'سوال'
+        verbose_name_plural = 'سوالات سری دوم'
+
+    def __str__(self):
+        return self.question_title
+
+
+class Choice_2(models.Model):
+    CHOICE_FIELDS = [
+        ('0', 'هرگز'),
+        ('1', 'یک یا دوبار در هفته'),
+        ('2', 'سه یا چهار بار در هفته'),
+        ('3', 'روزی یک بار'),
+        ('4', 'روزی چند بار'),
+    ]
+    question = models.ForeignKey(Question_2, on_delete=models.CASCADE, verbose_name='سوال')
+    choice_text = models.CharField(choices=CHOICE_FIELDS, max_length=1, verbose_name='متن گزینه ها')
+
+    class Meta:
+        verbose_name = 'انتخاب'
+        verbose_name_plural = 'انتخاب ها'
+
+    def __str__(self):
+        return dict(self.CHOICE_FIELDS).get(self.choice_text, self.choice_text)
+
+
+class Vote_2(models.Model):
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, verbose_name='کاربر')
+    question = models.ForeignKey(Question_2, on_delete=models.CASCADE, verbose_name='سوال')
+    choice = models.ForeignKey(Choice_2, on_delete=models.CASCADE, verbose_name='انتخاب')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ رای')
 
     class Meta:
         verbose_name = 'رای'
