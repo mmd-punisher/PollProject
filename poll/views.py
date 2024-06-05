@@ -4,7 +4,8 @@ from .models import UserModel, Question, Vote, Vote_2, Question_2, Question_3, V
 
 
 def index(request):
-    return redirect('user_login')
+    # return redirect('user_login')
+    return render(request, 'poll/index.html')
 
 
 def user_login(request):
