@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from rangefilter.filters import DateRangeFilter
 import csv
-from .models import UserModel, Question, Choice, Vote, Choice_2, Question_2, Vote_2
+from .models import UserModel, Question, Choice, Vote, Choice_2, Question_2, Vote_2, Question_3, Choice_3
 
 admin.site.site_header = 'پنل مدیریت CMDQ'
 admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
@@ -230,6 +230,13 @@ class ChoiceInline_2(admin.TabularInline):
     verbose_name_plural = 'انتخاب ها'
 
 
+class ChoiceInline_3(admin.TabularInline):
+    model = Choice_3
+    extra = 3
+    verbose_name = 'انتخاب'
+    verbose_name_plural = 'انتخاب ها'
+
+
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -249,4 +256,10 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInline_2]
     list_display = ('question_title', 'question_text', 'pub_date')
+    ordering = ('id',)
+
+
+@admin.register(Question_3)
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [ChoiceInline_3]
     ordering = ('id',)

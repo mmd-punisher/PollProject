@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'cmdq_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cmdq_poll_db',
+        'NAME': 'cmdq_test_1',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': 'Mohammad_M22',

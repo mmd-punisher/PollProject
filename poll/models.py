@@ -154,3 +154,48 @@ class Vote_2(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
+
+
+class Question_3(models.Model):
+    question_related = models.ForeignKey(Question_2, on_delete=models.CASCADE, related_name='related_question', verbose_name='سوال مربوط', default='1')
+    question_title = models.CharField(max_length=255, verbose_name='عنوان سوال')
+    question_text = models.CharField(max_length=350, verbose_name='متن سوال')
+    pub_date = models.DateTimeField(default=datetime.now, verbose_name='تاریخ انتشار')
+
+    class Meta:
+        verbose_name = 'سوال'
+        verbose_name_plural = 'سوالات سری سوم'
+
+    def __str__(self):
+        return self.question_title
+
+
+class Choice_3(models.Model):
+    CHOICE_FIELDS = [
+        ('0', 'هرگز/کم'),
+        ('1', 'متوسط'),
+        ('2', 'زیاد'),
+    ]
+    question = models.ForeignKey(Question_3, on_delete=models.CASCADE, verbose_name='سوال')
+    choice_text = models.CharField(choices=CHOICE_FIELDS, max_length=1, verbose_name='متن گزینه ها')
+
+    class Meta:
+        verbose_name = 'انتخاب'
+        verbose_name_plural = 'انتخاب ها'
+
+    # def __str__(self):
+    #     return dict(self.CHOICE_FIELDS).get(self.choice_text, self.choice_text)
+
+
+class Vote_3(models.Model):
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE, verbose_name='کاربر')
+    question = models.ForeignKey(Question_3, on_delete=models.CASCADE, verbose_name='سوال')
+    choice = models.ForeignKey(Choice_3, on_delete=models.CASCADE, verbose_name='انتخاب', null=True)
+    date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ رای')
+
+    class Meta:
+        verbose_name = 'رای'
+        verbose_name_plural = 'رای ها'
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
