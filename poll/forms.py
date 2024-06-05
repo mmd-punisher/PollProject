@@ -49,7 +49,8 @@ class VoteForm_3(forms.ModelForm):
     choice = forms.ModelChoiceField(
         queryset=Choice_3.objects.none(),
         widget=forms.RadioSelect(),
-        empty_label=None
+        empty_label=None,
+        required=False  # Set required to False
     )
 
     class Meta:
