@@ -183,8 +183,8 @@ class Choice_3(models.Model):
         verbose_name = 'انتخاب'
         verbose_name_plural = 'انتخاب ها'
 
-    # def __str__(self):
-    #     return dict(self.CHOICE_FIELDS).get(self.choice_text, self.choice_text)
+    def __str__(self):
+        return dict(self.CHOICE_FIELDS).get(self.choice_text, self.choice_text)
 
 
 class Vote_3(models.Model):
