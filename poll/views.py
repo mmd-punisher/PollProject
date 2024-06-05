@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from .forms import UserForm, VoteForm, CommentForm, VoteForm_2
-from .models import UserModel, Question, Vote, Vote_2, Question_2
+from .forms import UserForm, VoteForm, CommentForm, VoteForm_2, VoteForm_3
+from .models import UserModel, Question, Vote, Vote_2, Question_2, Question_3, Vote_3
 
 
 def index(request):
@@ -126,7 +126,7 @@ def poll_view(request, question_id):
     return render(request, 'poll/poll.html', {'form': form, 'question': question, 'user': user})
 
 
-def poll_view_2(request, question_id):
+"""def poll_view_2(request, question_id):
     user_id = request.session.get('user_id')
     if not user_id:
         return redirect('user_login')
@@ -154,7 +154,61 @@ def poll_view_2(request, question_id):
                 return redirect('comment')
 
     return render(request, 'poll/poll.html', {'form': form, 'question': question, 'user': user})
+"""
 
+
+def poll_view_2(request, question_id):
+    user_id = request.session.get('user_id')
+    if not user_id:
+        return redirect('user_login')
+    user = get_object_or_404(UserModel, pk=user_id)
+
+    question = get_object_or_404(Question_2, pk=question_id)
+    related_questions = Question_3.objects.filter(question_related=question)
+
+    try:
+        previous_vote = Vote_2.objects.get(user=user, question=question)
+        form_2 = VoteForm_2(instance=previous_vote, question_id=question_id)
+    except Vote_2.DoesNotExist:
+        form_2 = VoteForm_2(question_id=question_id)
+
+    forms_3 = []
+    for related_question in related_questions:
+        try:
+            previous_vote = Vote_3.objects.get(user=user, question=related_question)
+            form = VoteForm_3(instance=previous_vote, question_id=related_question.id, prefix=f'question_{related_question.id}')
+        except Vote_3.DoesNotExist:
+            form = VoteForm_3(question_id=related_question.id, prefix=f'question_{related_question.id}')
+        forms_3.append({'form': form, 'question': related_question})
+
+    if request.method == 'POST':
+        form_2 = VoteForm_2(request.POST, question_id=question_id)
+        forms_3 = [{'form': VoteForm_3(request.POST, question_id=related_question.id, prefix=f'question_{related_question.id}'), 'question': related_question} for related_question in related_questions]
+
+        if form_2.is_valid() and all([item['form'].is_valid() for item in forms_3]):
+            vote_2 = form_2.save(commit=False)
+            vote_2.question = question
+            vote_2.user = user
+            vote_2.save()
+
+            for item in forms_3:
+                vote_3 = item['form'].save(commit=False)
+                vote_3.question = item['question']
+                vote_3.user = user
+                vote_3.save()
+
+            next_question = Question_2.objects.filter(pk__gt=question_id).first()
+            if next_question:
+                return redirect('poll_2', question_id=next_question.pk)
+            else:
+                return redirect('comment')
+
+    return render(request, 'poll/poll.html', {
+        'form_2': form_2,
+        'forms_3': forms_3,
+        'question': question,
+        'user': user
+    })
 
 def comment_view(request):
     user_id = request.session.get('user_id')
@@ -171,7 +225,6 @@ def comment_view(request):
         form = CommentForm(instance=user)
 
     return render(request, 'poll/comment.html', {'form': form})
-
 
 
 def continue_view(request):

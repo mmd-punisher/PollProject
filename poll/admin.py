@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from rangefilter.filters import DateRangeFilter
 import csv
-from .models import UserModel, Question, Choice, Vote, Choice_2, Question_2, Vote_2, Question_3, Choice_3
+from .models import UserModel, Question, Choice, Vote, Choice_2, Question_2, Vote_2, Question_3, Choice_3, Vote_3
 
 admin.site.site_header = 'پنل مدیریت CMDQ'
 admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
@@ -263,3 +263,6 @@ class QuestionAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline_3]
     ordering = ('id',)
+
+
+admin.site.register(Vote_3)

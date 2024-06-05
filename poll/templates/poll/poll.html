@@ -5,11 +5,45 @@
     <title>نظرسنجی</title>
 </head>
 <body>
-    <h1>{{ question.question_text }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">ثبت پاسخ و ادامه</button>
-    </form>
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    <h2>{{ question.question_text }}</h2>#}
+{#    {{ form_2.as_p }}#}
+{#    {{ form.as_p }}#}
+{#    {% for item in forms_3 %}#}
+{#        <h3>{{ item.question.question_text }}</h3>#}
+{#        {{ item.form.as_p }}#}
+{#    {% endfor %}#}
+{##}
+{#    <button type="submit">Submit</button>#}
+{#</form>#}
+
+
+
+
+<!-- poll/poll.html -->
+<form method="post">
+    {% csrf_token %}
+    <h2>{{ question.question_text }}</h2>
+    {{ form_2.as_p }}
+    {{ form.as_p }}
+    {% for item in forms_3 %}
+        <h3>{{ item.question.question_text }}</h3>
+        {{ item.form.as_p }}
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">ثبت پاسخ و ادامه</button>#}
+{#    </form>#}
 </body>
 </html>
+    
