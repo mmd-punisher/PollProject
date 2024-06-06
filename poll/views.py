@@ -245,3 +245,20 @@ def continue_view(request):
 
 def complete_view(request):
     return render(request, 'poll/complete.html', {'message': "Thank you for completing the survey!"})
+
+
+def contact_us(request):
+    messages = {
+        'product': 'طراحی و اجرا توسط علیرضا اسماعیلی و محمد موسی پور © '
+    }
+    return render(request, template_name='poll/contact_us.html', context=messages)
+
+
+def about_us(request):
+    message = {
+    }
+    return render(request, template_name='poll/about_us.html')
+
+
+def site_header_partial(request):
+    return render(request, 'shared/site_header_partial.html', {})

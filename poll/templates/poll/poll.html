@@ -1,35 +1,57 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>نظرسنجی</title>
-</head>
-<body>
+{% extends 'shared/_layout.html' %}
+
+{% block title %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid full-height">
+        <div class="row row-height">
+            <div class="col-lg-6 content-left" id="left">
+                <div class="content-left-wrapper">
+                    <div>
+                        <figure>
+                            <img src="/static/img/info_graphic_1.svg" alt="" class=""/>
+                        </figure>
+                        <h2>پرسشنامه کرنل</h2>
+                        <p>
+                            پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا
+                            در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
+                            وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
+                            گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و
+                            چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ
+                            و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
+                            چپ به صورت خود گزارش دهی فراهم می‌کند
+                        </p>
+                        <a href="#0" class="btn_1 rounded">بیشتر بدانید</a>
+                        <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>
+                    </div>
+                    <div class="copy">© 2023 CMDQ</div>
+                </div>
+                <!-- /content-left-wrapper -->
+            </div>
+            <div class="col-lg-6 content-right">
+                <div id="wizard_container">
+                    <div id="middle-wizard">
+
+                        <form method="post">
+                            {% csrf_token %}
+                            <h2>{{ question.question_text }}</h2>
+
+                            {{ form_2.as_p }}
+                            {{ form.as_p }}
+                            {% if question.question_img %}
+                                <img src="{{ question.question_img.url }}" alt="{{ question.question_title }}">
+                            {% else %}
+                            {% endif %}                            {% for item in forms_3 %}
+                            <h3>{{ item.question.question_text }}</h3>
+                            {{ item.form.as_p }}
+                        {% endfor %}
+                            <button type="submit" class="">بعدی</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<!-- poll/poll.html -->
-<form method="post">
-    {% csrf_token %}
-    <h2>{{ question.question_text }}</h2>
-    {{ form_2.as_p }}
-    {{ form.as_p }}
-    {% for item in forms_3 %}
-        <h3>{{ item.question.question_text }}</h3>
-        {{ item.form.as_p }}
-    {% endfor %}
-
-    <button type="submit">Submit</button>
-</form>
-
-
-
-
-
-{#    <form method="post">#}
-{#        {% csrf_token %}#}
-{#        {{ form.as_p }}#}
-{#        <button type="submit">ثبت پاسخ و ادامه</button>#}
-{#    </form>#}
-</body>
-</html>
-    
+{% endblock %}

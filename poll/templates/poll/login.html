@@ -1,15 +1,153 @@
-<!-- user_login.html -->
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>ورود کاربر</title>
-</head>
-<body>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-primary" type="submit">ورود</button>
-</form>
-</body>
-</html>
+{#{% extends 'shared/_layout.html' %}#}
+{##}
+{#{% block title %}#}
+{#    ورود کاربر#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <style>#}
+{#        body {#}
+{#            text-align: right;#}
+{#        }#}
+{##}
+{#        .form-control {#}
+{#            direction: rtl;#}
+{#        }#}
+{#    </style>#}
+{#    <div id="preloader">#}
+{#        <div data-loader="circle-side"></div>#}
+{#    </div>#}
+{#    <div id="loader_form">#}
+{#        <div data-loader="circle-side-2"></div>#}
+{#    </div>#}
+{#    <div class="container-fluid full-height">#}
+{#        <div class="row row-height">#}
+{#            <div class="col-lg-6 content-left" id="left">#}
+{#                <div class="content-left-wrapper">#}
+{#                    <div>#}
+{#                        <figure>#}
+{#                            <img src="/static/img/info_graphic_1.svg" alt="" class=""/>#}
+{#                        </figure>#}
+{#                        <h2>پرسشنامه کرنل</h2>#}
+{#                        <p>#}
+{#                            پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا#}
+{#                            در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص#}
+{#                            وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های#}
+{#                            گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و#}
+{#                            چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ#}
+{#                            و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و#}
+{#                            چپ به صورت خود گزارش دهی فراهم می‌کند#}
+{#                        </p>#}
+{#                        <a href="#0" class="btn_1 rounded">بیشتر بدانید</a>#}
+{#                        <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>#}
+{#                    </div>#}
+{#                    <div class="copy">© 2023 CMDQ</div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-lg-6 content-right">#}
+{#                <div id="wizard_container">#}
+{#                    <div id="top-wizard">#}
+{#                        <div id="progressbar"></div>#}
+{#                    </div>#}
+{#                    <form id="wrapped" method="post">#}
+{#                        <h3 class="main_question d-flex justify-content-end">#}
+{#                            لطفا اطلاعات حود را تکمیل کنید#}
+{#                        </h3>#}
+{#                        {% for field in form %}#}
+{#                            <div class="form-group">#}
+{#                                {{ field.label_tag }}#}
+{#                                {{ field }}#}
+{#                                {% if field.errors %}#}
+{#                                    <div class="text-danger">#}
+{#                                        {% for error in field.errors %}#}
+{#                                            <p>{{ error }}</p>#}
+{#                                        {% endfor %}#}
+{#                                    </div>#}
+{#                                {% endif %}#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                        {% csrf_token %}#}
+{#                        {{ form.as_p }}#}
+{#                    #}
+{#                        <button type="submit" class="btn btn-primary form-control">ارسال</button>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#{% endblock %}#}
+
+
+{% extends 'shared/_layout.html' %}
+{% block title %}
+    ورود کاربر
+{% endblock %}
+{% block content %}
+    <style>
+        body {
+            text-align: right;
+        }
+
+        .form-control {
+            direction: rtl;
+        }
+    </style>
+    <div class="container-fluid full-height">
+        <div class="row row-height">
+            <div class="col-lg-6 content-left" id="left">
+                <div class="content-left-wrapper">
+                    <div>
+                        <figure>
+                            <img src="/static/img/info_graphic_1.svg" alt="" class=""/>
+                        </figure>
+                        <h2>پرسشنامه کرنل</h2>
+                        <p>
+                            پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا
+                            در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
+                            وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
+                            گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و
+                            چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ
+                            و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
+                            چپ به صورت خود گزارش دهی فراهم می‌کند
+                        </p>
+                        <a href="#0" class="btn_1 rounded">بیشتر بدانید</a>
+                        <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>
+                    </div>
+                    <div class="copy">© 2023 CMDQ</div>
+                </div>
+            </div>
+            <div class="col-lg-6 content-right" id="start">
+                <div id="wizard_container">
+                    <br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br>
+                    <h3>لطفا اطلاعات حود را تکمیل کنید</h3>
+
+                    <form method="post">
+
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group required">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger">
+                                        {% for error in field.errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                        <button type="submit" class="btn btn-primary form-control">ثبت نام</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

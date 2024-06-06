@@ -113,6 +113,7 @@ class Vote(models.Model):
 class Question_2(models.Model):
     question_title = models.CharField(max_length=255, verbose_name='عنوان سوال')
     question_text = models.CharField(max_length=350, verbose_name='متن سوال')
+    question_img = models.ImageField(null=True, blank=True, upload_to='images/', verbose_name='عکس')
     pub_date = models.DateTimeField(default=datetime.now, verbose_name='تاریخ انتشار')
 
     class Meta:

@@ -10,6 +10,8 @@ django-import-export = "*"
 mysqlclient = "*"
 django-admin-rangefilter = "*"
 pytz = "*"
+django-render-partial = "*"
+pillow = "*"
 
 [dev-packages]
 

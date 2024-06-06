@@ -1,1 +1,39 @@
 {% extends 'shared/_layout.html' %}
+
+{% block title %}
+    پرسشنامه جامع کرنل
+{% endblock %}
+{% block content %}
+
+    <div class="col-lg-12 content-left">
+        <div class="content-left-wrapper">
+            <a href="index.html" id="logo"
+            ><img src="/static/img/logo.png" alt="" width="49" height="35"
+            /></a>
+
+            <!-- /social -->
+            <div>
+                <figure>
+                    <img src="/static/img/info_graphic_3.svg" alt="" id="home"/>
+                </figure>
+                <h2>آزمون جامع کرنل</h2>
+                <p>
+                    پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل ابزاری کارا
+                    در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
+                    وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
+                    گردن، شانه چپ و راست، قسمت فوقانی پشت، قسمت فوقانی بازو راست و
+                    چپ، قسمت تحتانی پشت، ساعد راست و چپ، مچ چپ و راست، باسن، ران چپ
+                    و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
+                    چپ به صورت خود گزارش دهی فراهم می‌کند
+                </p>
+                <a href="{% url 'user_login' %}" class="btn_1 rounded">رفتن به پرسشنامه</a>
+                <a href="{% url 'user_login' %}" class="btn_1 rounded mobile_btn">رفتن به پرسشنامه</a>
+
+            </div>
+            <div class="copy"> طراحی و اجرا توسط <a href="alirezaesmaeili.cs@gmail.com">علیرضا اسماعیلی </a>و <a
+                    href="mohammadmoosapoor4@gmail.com">محمد موسی پور</a>
+            </div>
+        </div>
+        <!-- /content-left-wrapper -->
+    </div>
+{% endblock %}
