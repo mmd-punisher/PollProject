@@ -3,9 +3,22 @@
 {% block title %}
 {% endblock %}
 {% block content %}
+    <style>
+        @font-face {
+            font-family: "font1";
+            src: url("/static/fonts/Vazir.woff2") format("woff2"),
+            url("/fonts/Vazir.woff") format("woff");
+        }
+
+        * {
+            font-family: "font1";
+        }
+    </style>
+    
     <div class="container-fluid full-height">
         <div class="row row-height">
             <div class="col-lg-6 content-left" id="left">
+
                 <div class="content-left-wrapper">
                     <div>
                         <figure>
@@ -39,12 +52,14 @@
                             {{ form_2.as_p }}
                             {{ form.as_p }}
                             {% if question.question_img %}
-                                <img src="{{ question.question_img.url }}" alt="{{ question.question_title }}">
+                                <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"
+                                     alt="{{ question.question_title }}">
                             {% else %}
-                            {% endif %}                            {% for item in forms_3 %}
-                            <h3>{{ item.question.question_text }}</h3>
-                            {{ item.form.as_p }}
-                        {% endfor %}
+                            {% endif %}
+                            {% for item in forms_3 %}
+                                <h3>{{ item.question.question_text }}</h3>
+                                {{ item.form.as_p }}
+                            {% endfor %}
                             <button type="submit" class="">بعدی</button>
                         </form>
                     </div>

@@ -68,8 +68,7 @@
 {#                            </div>#}
 {#                        {% endfor %}#}
 {#                        {% csrf_token %}#}
-{#                        {{ form.as_p }}#}
-{#                    #}
+{##}
 {#                        <button type="submit" class="btn btn-primary form-control">ارسال</button>#}
 {#                    </form>#}
 {#                </div>#}
@@ -78,7 +77,7 @@
 {#    </div>#}
 {##}
 {#{% endblock %}#}
-
+{##}
 
 {% extends 'shared/_layout.html' %}
 {% block title %}
@@ -86,6 +85,16 @@
 {% endblock %}
 {% block content %}
     <style>
+        @font-face {
+            font-family: "font1";
+            src: url("static/fonts/Vazir.woff2") format("woff2"),
+            url("/fonts/Vazir.woff") format("woff");
+        }
+
+        * {
+            font-family: "font1";
+        }
+
         body {
             text-align: right;
         }
@@ -94,6 +103,7 @@
             direction: rtl;
         }
     </style>
+
     <div class="container-fluid full-height">
         <div class="row row-height">
             <div class="col-lg-6 content-left" id="left">

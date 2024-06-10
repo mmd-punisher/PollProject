@@ -22,6 +22,11 @@ class UserModel(models.Model):
         ('pro', 'تولید'),
         ('ser', 'خدمات'),
     ]
+    GENDER_CHOICE =[
+        ('man', 'مرد'),
+        ('wom', 'زن'),
+        ('otw', 'سایر')
+    ]
     first_name = models.CharField(max_length=255, verbose_name="نام")
     last_name = models.CharField(max_length=255, verbose_name="نام خانوادگی")
     age = models.PositiveSmallIntegerField(verbose_name='سن',
@@ -32,12 +37,12 @@ class UserModel(models.Model):
     job = models.CharField(max_length=255, verbose_name='شغل')
     organ = models.CharField(max_length=255, verbose_name='نام سازمان')
 
-    work_experience = models.PositiveSmallIntegerField(default=0, verbose_name='سابقه شغلی',
+    work_experience = models.PositiveSmallIntegerField(verbose_name='سابقه شغلی',
                                                        validators=[MaxValueValidator(
                                                            60,
                                                            message='حداکثر سابقه شغلی 60 سال است')])
     education = models.CharField(max_length=2, choices=EDUCATION_Choices, verbose_name="تحصیلات")
-    marital_status = models.CharField(max_length=2, choices=MARITAL_Choices, verbose_name="وضعیت تعهد")
+    marital_status = models.CharField(max_length=2, choices=MARITAL_Choices, verbose_name="وضعیت تاهل")
     height = models.PositiveSmallIntegerField(verbose_name='قد (به سانتی متر)',
                                               validators=[MinValueValidator(110, message='حداقل قد 110 سانتی متر است'),
                                                           MaxValueValidator(
@@ -46,6 +51,7 @@ class UserModel(models.Model):
     weight = models.FloatField(verbose_name='وزن (به کیلوگرم)',
                                validators=[MinValueValidator(20, message='وزن مورد نظر کمتر از مقدار معقول است'),
                                            MaxValueValidator(250, message='وزن وارد شده بیشتر از مقدار محدود شده است')])
+    gender = models.CharField(max_length=3, choices=GENDER_CHOICE, verbose_name="جنسیت")
     bmi = models.FloatField(null=True, blank=True, verbose_name='BMI')
     comment = models.CharField(null=True, blank=True, max_length=755, verbose_name='نظرات و پیشنهادات')
     date_join = models.DateTimeField(default=datetime.now())

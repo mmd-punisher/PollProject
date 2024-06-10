@@ -27,7 +27,6 @@ class VoteForm(forms.ModelForm):
         self.fields['choice'].queryset = Choice.objects.filter(question_id=question_id)
 
 
-
 """class UserForm(forms.ModelForm):
     class Meta:
         model = UserModel
@@ -45,28 +44,30 @@ class VoteForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
+
+
     class Meta:
         model = UserModel
         fields = [
             'first_name', 'last_name', 'age', 'job_category', 'job', 'organ',
-            'work_experience', 'education', 'marital_status', 'height', 'weight'
+            'work_experience', 'education', 'marital_status', 'height', 'weight', 'gender'
         ]
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     for field_name, field in self.fields.items():
-    #         field.widget.attrs['class'] = 'form-control required'
-    #         if self.errors.get(field_name):
-    #             field.widget.attrs['class'] += ' is-invalid'
-    #         field.widget.attrs['placeholder'] = field.label
-    #         field.label = ''
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control required'
-            # field.widget.attrs['placeholder'] = field.label
-            field.label = field.label
+            if field_name == 'job_category':
+                field.choices = [('', 'رسته شغلی')] + list(field.choices)[1:]
+            if field_name == 'education':
+                field.choices = [('', 'میزان تحصیلات')] + list(field.choices)[1:]
+            if field_name == 'marital_status':
+                field.choices = [('', 'وضعیت تاهل')] + list(field.choices)[1:]
+            if field_name == 'gender':
+                field.choices = [('', 'جنسیت')] + list(field.choices)[1:]
+            else:
+                field.widget.attrs['placeholder'] = field.label
+            field.label = ''
 
 
 """    first_name = forms.CharField(
