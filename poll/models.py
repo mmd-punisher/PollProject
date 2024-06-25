@@ -53,7 +53,7 @@ class UserModel(models.Model):
                                            MaxValueValidator(250, message='وزن وارد شده بیشتر از مقدار محدود شده است')])
     gender = models.CharField(max_length=3, choices=GENDER_CHOICE, verbose_name="جنسیت")
     bmi = models.FloatField(null=True, blank=True, verbose_name='BMI')
-    comment = models.CharField(null=True, blank=True, max_length=755, verbose_name='نظرات و پیشنهادات')
+    comment = models.CharField(null=True, blank=True, max_length=200, verbose_name='نظرات و پیشنهادات')
     date_join = models.DateTimeField(default=datetime.now())
 
     class Meta:

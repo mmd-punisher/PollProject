@@ -3,6 +3,25 @@
     پایان مرجله اول سوالات
 {% endblock %}
 {% block content %}
+    <style>
+        @font-face {
+            font-family: "font1";
+            src: url("/static/fonts/Vazir.woff2") format("woff2"),
+            url("/fonts/Vazir.woff") format("woff");
+        }
+
+        * {
+            font-family: "font1";
+        }
+
+        .form-control {
+            direction: rtl;
+        }
+
+        body {
+            text-align: right;
+        }
+    </style>
     <div class="container-fluid full-height">
         <div class="row row-height">
             <div class="col-lg-6 content-left" id="left">

@@ -14,7 +14,7 @@
             font-family: "font1";
         }
     </style>
-    
+
     <div class="container-fluid full-height">
         <div class="row row-height">
             <div class="col-lg-6 content-left" id="left">
@@ -49,20 +49,65 @@
                             {% csrf_token %}
                             <h2>{{ question.question_text }}</h2>
 
-                            {{ form_2.as_p }}
-                            {{ form.as_p }}
+                            <div id="form-2-container">
+                                {{ form_2.as_p }}
+                            </div>
+                            <div id="form-1-container">
+                                {{ form.as_p }}
+                            </div>
                             {% if question.question_img %}
                                 <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"
                                      alt="{{ question.question_title }}">
                             {% else %}
                             {% endif %}
-                            {% for item in forms_3 %}
-                                <h3>{{ item.question.question_text }}</h3>
-                                {{ item.form.as_p }}
-                            {% endfor %}
+                            <div id="form-3-container">
+                                {% for item in forms_3 %}
+                                    <h3>{{ item.question.question_text }}</h3>
+                                    {{ item.form.as_p }}
+                                {% endfor %}
+                            </div>
                             <button type="submit" class="">بعدی</button>
                         </form>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const form2Radios = document.querySelectorAll('#form-2-container input[type="radio"]');
+                            const firstRadio = form2Radios[0];
+                            const form3Container = document.getElementById('form-3-container');
+
+                            form2Radios.forEach(radio => {
+                                radio.addEventListener('change', function () {
+                                    if (firstRadio.checked) {
+                                        form3Container.style.display = 'none';
+                                    } else {
+                                        form3Container.style.display = 'block';
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
+                    {#                    <div id="middle-wizard">#}
+                    {##}
+                    {#                        <form method="post">#}
+                    {#                            {% csrf_token %}#}
+                    {#                            <h2>{{ question.question_text }}</h2>#}
+                    {##}
+                    {#                            {{ form_2.as_p }}#}
+                    {#                            {{ form.as_p }}#}
+                    {#                            {% if question.question_img %}#}
+                    {#                                <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"#}
+                    {#                                     alt="{{ question.question_title }}">#}
+                    {#                            {% else %}#}
+                    {#                            {% endif %}#}
+                    {#                            {% for item in forms_3 %}#}
+                    {#                                <h3>{{ item.question.question_text }}</h3>#}
+                    {#                                {{ item.form.as_p }}#}
+                    {#                            {% endfor %}#}
+                    {#                            <button type="submit" class="">بعدی</button>#}
+                    {#                        </form>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </div>

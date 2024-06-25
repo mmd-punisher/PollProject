@@ -44,8 +44,6 @@ class VoteForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-
-
     class Meta:
         model = UserModel
         fields = [
@@ -152,5 +150,5 @@ class CommentForm(forms.ModelForm):
         model = UserModel
         fields = ['comment']
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 4, 'cols': 40})
+            'comment': forms.Textarea(attrs={'rows': 8, 'cols': 70, 'dir': 'rtl'})
         }

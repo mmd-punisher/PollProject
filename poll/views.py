@@ -244,7 +244,7 @@ def continue_view(request):
 
 
 def complete_view(request):
-    return render(request, 'poll/complete.html', {'message': "Thank you for completing the survey!"})
+    return render(request, 'poll/complete.html', {'message': "از شما برای شرکت در این نظرسنجی سپاسگزاریم !"})
 
 
 def contact_us(request):
