@@ -573,51 +573,51 @@ h3.main_question strong {
 }
 
 /* Wizard Buttons*/
-button.backward,
-button.forward,
-button.submit {
-  border: none;
-  color: #fff;
-  text-decoration: none;
-  transition: background .5s ease;
-  -moz-transition: background .5s ease;
-  -webkit-transition: background .5s ease;
-  -o-transition: background .5s ease;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  text-align: center;
-  background: #434bdf;
-  position: relative;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  line-height: 1;
-  padding: 12px 30px;
-}
+/*button.backward,*/
+/*button.forward,*/
+/*button.submit {*/
+/*  border: none;*/
+/*  color: #fff;*/
+/*  text-decoration: none;*/
+/*  transition: background .5s ease;*/
+/*  -moz-transition: background .5s ease;*/
+/*  -webkit-transition: background .5s ease;*/
+/*  -o-transition: background .5s ease;*/
+/*  display: inline-block;*/
+/*  cursor: pointer;*/
+/*  outline: none;*/
+/*  text-align: center;*/
+/*  background: #434bdf;*/
+/*  position: relative;*/
+/*  font-size: 14px;*/
+/*  font-size: 0.875rem;*/
+/*  font-weight: 600;*/
+/*  -webkit-border-radius: 3px;*/
+/*  -moz-border-radius: 3px;*/
+/*  -ms-border-radius: 3px;*/
+/*  border-radius: 3px;*/
+/*  line-height: 1;*/
+/*  padding: 12px 30px;*/
+/*}*/
 
-button.backward {
-  color: #777;
-  background: #e8e8e8;
-}
+/*button.backward {*/
+/*  color: #777;*/
+/*  background: #e8e8e8;*/
+/*}*/
 
-button[disabled] {
-  display: none;
-}
+/*button[disabled] {*/
+/*  display: none;*/
+/*}*/
 
-button.submit:before {
-  content: "\4e";
-  font-family: 'ElegantIcons';
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 18px;
-  font-size: 1.125rem;
-}
+/*button.submit:before {*/
+/*  content: "\4e";*/
+/*  font-family: 'ElegantIcons';*/
+/*  position: absolute;*/
+/*  top: 8px;*/
+/*  right: 10px;*/
+/*  font-size: 18px;*/
+/*  font-size: 1.125rem;*/
+/*}*/
 
 .backward:hover,
 .forward:hover {
@@ -1949,4 +1949,36 @@ input[type=file]::-webkit-file-upload-button:focus, input[type=file].invalid::-w
 .margin_60_35 {
   padding-top: 60px;
   padding-bottom: 35px;
+}
+
+.button2 {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+
+.button2:hover {
+  background-color: #3654ff;
+  cursor: pointer;
+}
+
+.button2 svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.button2:hover svg {
+  transform: translateX(5px);
+}
+
+.text2 {
+  margin: 0 1.5em
 }

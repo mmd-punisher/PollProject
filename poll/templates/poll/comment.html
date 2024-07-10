@@ -1,7 +1,7 @@
 {% extends 'shared/_layout.html' %}
 
 {% block title %}
-ثیت نظر یا پیشنهاد
+    ثیت نظر یا پیشنهاد
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@
                             <img src="/static/img/info_graphic_1.svg" alt="" class=""/>
                         </figure>
                         <h2>پرسشنامه کرنل</h2>
-                        <p>
+                        <p style="direction: rtl">
                             پرسشنامه فارسی ناراحتی‌های اسکلتی-عضلانی کرنل (CMDQ) ابزاری کارا
                             در بررسی میزان ناراحتی‌های اسکلتی-عضلانی است که اطلاعاتی در خصوص
                             وجود و شدت احساس درد و ناراحتی، را در ۱۲ قسمت بدن شامل اندام‌های
@@ -42,39 +42,49 @@
                             و راست، زانو چپ، راست و قسمت تحتانی پا راست و چپ، کف پا راست و
                             چپ به صورت خود گزارش دهی فراهم می‌کند
                         </p>
-                        <a href="#0" class="btn_1 rounded">بیشتر بدانید</a>
-                        <a href="#start" class="btn_1 rounded mobile_btn">بیشتر بدانید</a>
+
                     </div>
                     <div class="copy"> طراحی و اجرا توسط
-                        <a href="alirezaesmaeili.cs@gmail.com" style="color: yellow">علیرضا اسماعیلی </a>
+                        <a href="mailto:alirezaesmaeili.cs@gmail.com" style="color: yellow" target="_blank">علیرضا
+                            اسماعیلی</a>
                         و
-                        <a href="https://github.com/mmd-punisher/" style="color: yellow">محمد موسی پور</a>
+                        <a href="https://github.com/mmd-punisher/" style="color: yellow" target="_blank">محمد موسی
+                            پور
+                        </a><br>
+                        © 2024 CMDQ
                     </div>
-                    {#                    <div class="copy">© 2023 CMDQ</div>#}
                 </div>
             </div>
 
-            <div class="submit step">
-                <h3 class="main_question d-flex justify-content-end">
-                    <strong></strong>اتمام بخش دوم
-                </h3>
-                <div class="summary d-flex justify-content-start">
-
-                    <h5 dir="rtl" style="color: darkred;direction: rtl;">
-                        مطمئن باشيد كليه مطالب درج شده در پاسخنامه بصورت
-                        محرمانه
-                        نگهدار ي خواهند شد
-                    </h5>
-
-                </div>
-                <div class="form-group add_top_30 d-flex justify-content-end">
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ form.comment.errors }}
-                        {{ form.comment }}
-                        <br>
-                        <button type="submit" class="submit">ثبت</button>
-                    </form>
+            <div class="col-lg-6 content-right">
+                <div id="wizard_container">
+                    <div id="middle-wizard">
+                        <div class="submit step">
+                            <h2 class="main_question d-flex justify-content-end">
+                                اتمام بخش دوم
+                            </h2><br>
+                            <h5 dir="rtl" style="color: darkred;direction: rtl;">
+                                مطمئن باشيد كليه مطالب درج شده در پاسخنامه بصورت
+                                محرمانه
+                                نگهدار ي خواهند شد
+                            </h5>
+                            <br>
+                            <p>
+                                <strong>اگر نظر یا پیشنهادی درباره این پرسشنامه دارید، خوشحال میشویم با ما در میان
+                                    بگذارید</strong>
+                            </p>
+                            <div class="form-group add_top_30 d-flex justify-content-end">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {{ form.comment.errors }}
+                                    {{ form.comment }}
+                                    <br>
+                                    <br>
+                                    <button type="submit" class="submit">ثبت</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

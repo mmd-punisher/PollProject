@@ -13,7 +13,6 @@ urlpatterns = [
     path('continue/', views.continue_view, name='continue'),
     path('comment/', views.comment_view, name='comment'),
     path('complete/', views.complete_view, name='complete'),
-    path('contact-us/', views.contact_us, name='contact-us'),
     path('about-us/', views.about_us, name='about-us'),
 ]
 

@@ -50,6 +50,9 @@ class UserForm(forms.ModelForm):
             'first_name', 'last_name', 'age', 'job_category', 'job', 'organ',
             'work_experience', 'education', 'marital_status', 'height', 'weight', 'gender'
         ]
+        # widgets = {
+        #     'first_name': forms.TextInput(attrs={'class': 'form-control required'}),
+        # }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -150,5 +153,5 @@ class CommentForm(forms.ModelForm):
         model = UserModel
         fields = ['comment']
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 8, 'cols': 70, 'dir': 'rtl'})
+            'comment': forms.Textarea(attrs={'rows': 12, 'cols': 70, 'dir': 'rtl'})
         }

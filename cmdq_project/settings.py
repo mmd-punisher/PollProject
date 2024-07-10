@@ -76,12 +76,6 @@ WSGI_APPLICATION = 'cmdq_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -141,13 +135,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# DEFAULT_CHARSET = 'utf-8'
-# FILE_CHARSET = 'utf-8'
-# LANGUAGE_CODE = 'fa'
-# TIME_ZONE = 'Asia/Tehran'
-# USE_I18N = True
-# USE_L10N = True
-# USE_TZ = True
 
 LANGUAGE_CODE = 'fa-ir'
 # LANGUAGE_CODE = 'en-us'
