@@ -18,5 +18,110 @@
             font-family: "font1";
         }
     </style>
-    
+
+    <body>
+    <section>
+        <div id="preloader">
+            <div data-loader="circle-side"></div>
+        </div>
+
+        <!-- /Preload -->
+
+        <div id="loader_form">
+            <div data-loader="circle-side-2"></div>
+        </div><!-- /loader_form -->
+
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3">
+                        <a href="{% url 'index' %}"><img src="/static/img/logo.png" alt="" width="49" height="35"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- /container -->
+        </header>
+        <!-- /Header -->
+
+
+        <div id="sub_content_in">
+            <h1></h1>
+            <p></p>
+        </div>
+    </section>
+    <!-- /section -->
+    <section>
+        <main id="general_page  ">
+
+            <div class="container ">
+                <div class="main_title">
+                    <h2><em></em></h2>
+                    <p>
+                    </p>
+                </div>
+                <!--Team Carousel -->
+                <div class="row">
+                    <div class="owl-carousel owl-theme team-carousel d-flex justify-content-center">
+                        <!-- /team-item -->
+                        <div class="team-item">
+                            <div class="team-item-img">
+                                <img src="/static/img/team/alireza.jpg" alt="">
+                                <div class="team-item-detail">
+                                    <div class="team-item-detail-inner">
+
+                                        <ul class="social">
+                                            <li><a href="#0"><i class="icon-twitter"></i></a>
+                                            </li>
+
+                                            <li><a href="mailto: alirezaesmaeili.cs@gmail.com"><i
+                                                    class="icon-google"></i></a>
+                                            </li>
+                                            <li><a href="#0"><i class="icon-linkedin"></i></a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://github.com/BAADEH/" class="btn_1 white">GitHub </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-item-info">
+                                <h4>علیرضا اسماعیلی </h4>
+                                <p> Front-end Developer</p>
+                            </div>
+                        </div>
+                        <!-- /team-item -->
+                        <div class="team-item">
+                            <div class="team-item-img">
+                                <img src="/static/img/team/mohammad.png" height="373.33" alt="">
+                                <div class="team-item-detail">
+                                    <div class="team-item-detail-inner">
+
+                                        <ul class="social">
+                                            <li><a href="mailto: mohammadmoosapoor4@gmail.com"><i
+                                                    class="icon-google"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/in/mohammad-mousapour-493a23256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                                        class="icon-linkedin"></i></a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://github.com/mmd-punisher" class="btn_1 white">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-item-info">
+                                <h4> محمد موسی پور </h4>
+                                <p> Back-end Developer</p>
+                            </div>
+                        </div>
+                        <!-- /team-item -->
+                    </div>
+                </div>
+                <!--End Team Carousel-->
+            </div>
+            <!-- End container -->
+        </main>
+    </section>
+    </body>
+
 {% endblock %}
+
