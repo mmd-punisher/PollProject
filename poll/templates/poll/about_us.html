@@ -1,3 +1,131 @@
+{#{% extends 'shared/_layout.html' %}#}
+{#{% load static %}#}
+{#{% block title %}#}
+{#    درباره ما#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <style>#}
+{##}
+{#        @font-face {#}
+{#            font-family: "font1";#}
+{#            src: url("/static/fonts/Vazir.woff2") format("woff2"),#}
+{#            url("/fonts/Vazir.woff") format("woff");#}
+{##}
+{#        }#}
+{##}
+{#        * {#}
+{#            font-family: "font1";#}
+{#        }#}
+{#    </style>#}
+{##}
+{#    <body>#}
+{#    <section>#}
+{#        <div id="preloader">#}
+{#            <div data-loader="circle-side"></div>#}
+{#        </div>#}
+{##}
+{#        <!-- /Preload -->#}
+{##}
+{#        <div id="loader_form">#}
+{#            <div data-loader="circle-side-2"></div>#}
+{#        </div><!-- /loader_form -->#}
+{##}
+{#        <header>#}
+{#            <div class="container-fluid">#}
+{#                <div class="row">#}
+{#                    <div class="col-3">#}
+{#                        <a href="{% url 'index' %}"><img src="/static/img/logo.png" alt="" width="49" height="35"></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- /container -->#}
+{#        </header>#}
+{#        <!-- /Header -->#}
+{##}
+{##}
+{#        <div id="sub_content_in">#}
+{#            <h1></h1>#}
+{#            <p></p>#}
+{#        </div>#}
+{#    </section>#}
+{#    <!-- /section -->#}
+{#    <section>#}
+{#        <main id="general_page  ">#}
+{##}
+{#            <div class="container ">#}
+{#                <div class="main_title">#}
+{#                    <h2><em></em></h2>#}
+{#                    <p>#}
+{#                    </p>#}
+{#                </div>#}
+{#                <!--Team Carousel -->#}
+{#                <div class="row">#}
+{#                    <div class="owl-carousel owl-theme team-carousel d-flex justify-content-center">#}
+{#                        <!-- /team-item -->#}
+{#                        <div class="team-item">#}
+{#                            <div class="team-item-img">#}
+{#                                <img src="/static/img/team/alireza.jpg" alt="">#}
+{#                                <div class="team-item-detail">#}
+{#                                    <div class="team-item-detail-inner">#}
+{##}
+{#                                        <ul class="social">#}
+{#                                            <li><a href="#0"><i class="icon-twitter"></i></a>#}
+{#                                            </li>#}
+{##}
+{#                                            <li><a href="mailto: alirezaesmaeili.cs@gmail.com"><i#}
+{#                                                    class="icon-google"></i></a>#}
+{#                                            </li>#}
+{#                                            <li><a href="#0"><i class="icon-linkedin"></i></a>#}
+{#                                            </li>#}
+{#                                        </ul>#}
+{#                                        <a href="https://github.com/BAADEH/" class="btn_1 white">GitHub </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="team-item-info">#}
+{#                                <h4>علیرضا اسماعیلی </h4>#}
+{#                                <p> Front-end Developer</p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <!-- /team-item -->#}
+{#                        <div class="team-item">#}
+{#                            <div class="team-item-img">#}
+{#                                <img src="/static/img/team/mohammad.png" height="373.33" alt="">#}
+{#                                <div class="team-item-detail">#}
+{#                                    <div class="team-item-detail-inner">#}
+{##}
+{#                                        <ul class="social">#}
+{#                                            <li><a href="mailto: mohammadmoosapoor4@gmail.com"><i#}
+{#                                                    class="icon-google"></i></a>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="https://www.linkedin.com/in/mohammad-mousapour-493a23256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i#}
+{#                                                        class="icon-linkedin"></i></a>#}
+{#                                            </li>#}
+{#                                        </ul>#}
+{#                                        <a href="https://github.com/mmd-punisher" class="btn_1 white">GitHub</a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="team-item-info">#}
+{#                                <h4> محمد موسی پور </h4>#}
+{#                                <p> Back-end Developer</p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <!-- /team-item -->#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!--End Team Carousel-->#}
+{#            </div>#}
+{#            <!-- End container -->#}
+{#        </main>#}
+{#    </section>#}
+{#    </body>#}
+{##}
+{#{% endblock %}#}
+{##}
+
 {% extends 'shared/_layout.html' %}
 {% load static %}
 {% block title %}
@@ -19,109 +147,203 @@
         }
     </style>
 
-    <body>
-    <section>
-        <div id="preloader">
-            <div data-loader="circle-side"></div>
+    <header style="width: 100%">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1">
+                    <a href="{% url 'index' %}"><img src="/static/img/logo.png" alt="" width="98" height="70"></a>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <!-- /Preload -->
 
-        <div id="loader_form">
-            <div data-loader="circle-side-2"></div>
-        </div><!-- /loader_form -->
+    <section id="page-header">
 
-        <header>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-3">
-                        <a href="{% url 'index' %}"><img src="/static/img/logo.png" alt="" width="49" height="35"></a>
+
+        <div class="row current-cat">
+            <div class="col-full">
+                <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+
+
+                <div class="profile-header">
+                    <div class="profile-picture">
+                        <img src="{% static 'img/team/mohammad.png' %}" alt="">
+                    </div>
+
+                </div>
+                <div class="profile-details">
+                    <h1>محمد موسی پور</h1>
+                    <br>
+                    <h3>Back-End Developer</h3>
+                    <p class="profile-details">بیوگرافی</p>
+
+                    <div class="profile-header">
+                        <h3>راه های ارتباطی</h3>
+                        <ul class="wrapper">
+                            <li class="icon website">
+                                <span class="tooltip">Gmail</span>
+                                <a href="#" style="color: black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.8em" height="1.8em"
+                                         class="website"
+                                         viewBox="0 0 50 50">
+                                        <path d="M12 23.403V23.39 10.389L11.88 10.3h-.01L9.14 8.28C7.47 7.04 5.09 7.1 3.61 8.56 2.62 9.54 2 10.9 2 12.41v3.602L12 23.403zM38 23.39v.013l10-7.391V12.41c0-1.49-.6-2.85-1.58-3.83-1.46-1.457-3.765-1.628-5.424-.403L38.12 10.3 38 10.389V23.39zM14 24.868l10.406 7.692c.353.261.836.261 1.189 0L36 24.868V11.867L25 20l-11-8.133V24.868zM38 25.889V41c0 .552.448 1 1 1h6.5c1.381 0 2.5-1.119 2.5-2.5V18.497L38 25.889zM12 25.889L2 18.497V39.5C2 40.881 3.119 42 4.5 42H11c.552 0 1-.448 1-1V25.889z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="icon linkedin">
+                                <span class="tooltip">Linkedin</span>
+
+                                <a href="#"
+                                   style="color: black; text-decoration: none; ">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         class="linkedin">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="icon instagram">
+                                <span class="tooltip">GitHub</span>
+                                <a href="#" style="color: black">
+
+                                    <svg height="2em"
+                                         viewBox="0 0 1792 1792"
+                                         fill="currentColor"
+                                         class="instagram"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1664 896q0 251-146.5 451.5t-378.5 277.5q-27 5-39.5-7t-12.5-30v-211q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 89t.5 54q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"></path>
+                                    </svg>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="page-header">
+        <div class="row current-cat">
+            <div class="col-full">
+                <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+
+
+                <div class="profile-header">
+
+                    <div class="profile-picture">
+                        <img src="{% static 'img/team/alireza.jpg' %}" alt="">
                     </div>
                 </div>
             </div>
-            <!-- /container -->
-        </header>
-        <!-- /Header -->
+            <div class="profile-details">
+                <h1>علیرضا اسماعیلی</h1>
+                <br>
+                <h3>Front-End Developer</h3>
+                <p class="profile-details">بیوگرافی</p>
 
+                <div class="profile-header">
+                    <h3>راه های ارتباطی</h3>
+                    <ul class="wrapper">
+                        <li class="icon website">
+                            <span class="tooltip">Gmail</span>
+                            <a href="mailto: alirezaesmaeili.cs@gmail.com" style="color: black">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1.8em" height="1.8em"
+                                     viewBox="0 0 50 50">
+                                    <path d="M12 23.403V23.39 10.389L11.88 10.3h-.01L9.14 8.28C7.47 7.04 5.09 7.1 3.61 8.56 2.62 9.54 2 10.9 2 12.41v3.602L12 23.403zM38 23.39v.013l10-7.391V12.41c0-1.49-.6-2.85-1.58-3.83-1.46-1.457-3.765-1.628-5.424-.403L38.12 10.3 38 10.389V23.39zM14 24.868l10.406 7.692c.353.261.836.261 1.189 0L36 24.868V11.867L25 20l-11-8.133V24.868zM38 25.889V41c0 .552.448 1 1 1h6.5c1.381 0 2.5-1.119 2.5-2.5V18.497L38 25.889zM12 25.889L2 18.497V39.5C2 40.881 3.119 42 4.5 42H11c.552 0 1-.448 1-1V25.889z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="icon twitter">
+                            <span class="tooltip">Twitter</span>
+                            <a href="#"
+                               style="color: black; text-decoration: none; ">
+                                <svg
+                                        height="1.8em"
+                                        fill="currentColor"
+                                        viewBox="0 0 48 48"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="twitter"
+                                >
+                                    <path
+                                            d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
 
-        <div id="sub_content_in">
-            <h1></h1>
-            <p></p>
+                        <li class="icon linkedin">
+                            <span class="tooltip">Linkedin</span>
+                            <a href="#" style="color: black">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     class="linkedin">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="icon instagram">
+                            <span class="tooltip">GitHub</span>
+                            <a href="#" style="color: black">
+                                <svg height="2em"
+                                     viewBox="0 0 1792 1792"
+                                     fill="currentColor"
+                                     class="instagram"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1664 896q0 251-146.5 451.5t-378.5 277.5q-27 5-39.5-7t-12.5-30v-211q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 89t.5 54q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
         </div>
     </section>
-    <!-- /section -->
-    <section>
-        <main id="general_page  ">
-
-            <div class="container ">
-                <div class="main_title">
-                    <h2><em></em></h2>
-                    <p>
-                    </p>
-                </div>
-                <!--Team Carousel -->
-                <div class="row">
-                    <div class="owl-carousel owl-theme team-carousel d-flex justify-content-center">
-                        <!-- /team-item -->
-                        <div class="team-item">
-                            <div class="team-item-img">
-                                <img src="/static/img/team/alireza.jpg" alt="">
-                                <div class="team-item-detail">
-                                    <div class="team-item-detail-inner">
-
-                                        <ul class="social">
-                                            <li><a href="#0"><i class="icon-twitter"></i></a>
-                                            </li>
-
-                                            <li><a href="mailto: alirezaesmaeili.cs@gmail.com"><i
-                                                    class="icon-google"></i></a>
-                                            </li>
-                                            <li><a href="#0"><i class="icon-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                        <a href="https://github.com/BAADEH/" class="btn_1 white">GitHub </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-item-info">
-                                <h4>علیرضا اسماعیلی </h4>
-                                <p> Front-end Developer</p>
-                            </div>
-                        </div>
-                        <!-- /team-item -->
-                        <div class="team-item">
-                            <div class="team-item-img">
-                                <img src="/static/img/team/mohammad.png" height="373.33" alt="">
-                                <div class="team-item-detail">
-                                    <div class="team-item-detail-inner">
-
-                                        <ul class="social">
-                                            <li><a href="mailto: mohammadmoosapoor4@gmail.com"><i
-                                                    class="icon-google"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.linkedin.com/in/mohammad-mousapour-493a23256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
-                                                        class="icon-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                        <a href="https://github.com/mmd-punisher" class="btn_1 white">GitHub</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-item-info">
-                                <h4> محمد موسی پور </h4>
-                                <p> Back-end Developer</p>
-                            </div>
-                        </div>
-                        <!-- /team-item -->
-                    </div>
-                </div>
-                <!--End Team Carousel-->
-            </div>
-            <!-- End container -->
-        </main>
-    </section>
-    </body>
 
 {% endblock %}
 
+
+
+{#Web SVG#}
+{#<svg#}
+{#        version="1.1" xmlns="http://www.w3.org/2000/svg"#}
+{#        viewBox="0 0 140 100"#}
+{#        fill="currentColor"#}
+{#        xmlns="http://www.w3.org/2000/svg"#}
+{#        height="1.2em"#}
+{#        width="2em"#}
+{#        class="website"#}
+{#        xmlns:xlink="http://www.w3.org/1999/xlink"#}
+{#        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"#}
+{#        xml:space="preserve"><g><path d="M0.06,64.15C0.02,63.25,0,62.35,0,61.44c0-4.24,0.41-8.33,1.22-12.35c0.77-3.94,1.95-7.74,3.54-11.46 c0-0.04,0.04-0.11,0.07-0.15c1.58-3.72,3.5-7.19,5.68-10.47c2.17-3.28,4.68-6.3,7.45-9.07c2.76-2.8,5.79-5.27,9.07-7.44 c3.28-2.21,6.78-4.09,10.47-5.68c3.76-1.62,7.63-2.8,11.61-3.61C53.07,0.41,57.2,0,61.44,0c4.24,0,8.33,0.41,12.35,1.22 c3.94,0.77,7.74,1.95,11.46,3.54c0.04,0,0.11,0.04,0.15,0.07c3.69,1.58,7.19,3.5,10.47,5.68c3.28,2.17,6.3,4.68,9.07,7.44 c2.8,2.76,5.27,5.79,7.45,9.07c2.21,3.28,4.09,6.78,5.68,10.47c1.62,3.76,2.8,7.63,3.61,11.61c0.81,3.98,1.22,8.11,1.22,12.35 c0,0.91-0.02,1.81-0.06,2.71C82.02,64.15,40.96,64.15,0.06,64.15L0.06,64.15z M82.41,70.94h7.04l3.71,15.25l4.71-15.25h7.9 l4.87,15.27l3.71-15.27h8.48l-8.47,24.29h-7.84l-4.66-14.62l-4.51,14.62h-7.89l-7.79-22.17l-7.73,22.17h-7.84l-4.66-14.62 l-4.51,14.62h-7.89l-7.79-22.17l-7.73,22.17h-7.84l-4.66-14.62l-4.51,14.62H8.63L0.09,70.94h8.53l3.71,15.25l4.7-15.25h7.9 l4.87,15.27l3.71-15.27h6.99h1.49h7.04l3.71,15.25l4.71-15.25h7.9l4.87,15.27l3.71-15.27h6.99H82.41L82.41,70.94z M5.45,58.75 h16.99c0.63-8.4,3.43-16.84,8.4-25.36H12.86c-1.14,1.99-2.17,4.05-3.1,6.23c-0.04,0.04-0.04,0.07-0.07,0.11 c-1.4,3.35-2.51,6.82-3.21,10.43C5.93,52.96,5.57,55.8,5.45,58.75L5.45,58.75z M16.36,28.01h17.95 c5.12-7.37,11.87-14.78,20.27-22.22c-1.51,0.18-2.99,0.41-4.42,0.7c-3.65,0.74-7.15,1.81-10.54,3.28c-3.43,1.47-6.63,3.21-9.62,5.2 c-2.99,1.99-5.71,4.24-8.26,6.78c-1.95,1.95-3.76,4.02-5.38,6.23V28.01L16.36,28.01z M68.3,5.79c8.44,7.45,15.18,14.85,20.27,22.22 h17.95c-1.62-2.21-3.43-4.28-5.38-6.23c-2.54-2.54-5.27-4.79-8.26-6.78c-2.95-1.99-6.16-3.72-9.62-5.2 c-0.04-0.04-0.07-0.04-0.11-0.07c-3.35-1.4-6.82-2.51-10.43-3.21c-1.47-0.3-2.95-0.52-4.42-0.7V5.79L68.3,5.79z M110.02,33.39 H92.03c4.98,8.51,7.78,16.95,8.4,25.36h16.99c-0.15-2.95-0.48-5.79-1.03-8.59c-0.74-3.65-1.81-7.15-3.28-10.54 C112.19,37.45,111.16,35.38,110.02,33.39L110.02,33.39L110.02,33.39z M64.13,9.29v18.72h17.84C77.29,21.82,71.35,15.59,64.13,9.29 L64.13,9.29z M64.13,33.39v25.36h30.92c-0.7-8.33-3.8-16.77-9.32-25.36H64.13L64.13,33.39z M58.75,58.75V33.39h-21.6 c-5.53,8.59-8.62,17.03-9.32,25.36H58.75L58.75,58.75z M58.75,28.01V9.29c-7.22,6.3-13.16,12.53-17.84,18.72H58.75L58.75,28.01z">#}
+{#                                                                                                        </path></g>#}
+{#                                                                                                    </svg>#}
+{#                                    <svg fill="currentColor" height="1.8.em" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"#}
+{#                                         viewBox="0 0 310 310" xml:space="preserve">#}
+{#<g id="XMLID_801_">#}
+{#	<path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73#}
+{#		C77.16,101.969,74.922,99.73,72.16,99.73z"></path>#}
+{#    <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4#}
+{#		c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path>#}
+{#    <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599#}
+{#		c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319#}
+{#		c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995#}
+{#		C310,145.43,300.549,94.761,230.454,94.761z"></path>#}
+{#</g>#}
+{#</svg>#}
+{#                                    <svg#}
+{#                                            height="1.8em"#}
+{#                                            fill="currentColor"#}
+{#                                            viewBox="0 0 48 48"#}
+{#                                            xmlns="http://www.w3.org/2000/svg"#}
+{#                                            class="twitter"#}
+{#                                    >#}
+{#                                        <path#}
+{#                                                d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"#}
+{#                                        ></path>#}
+{#                                    </svg>#}
