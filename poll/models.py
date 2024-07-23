@@ -205,4 +205,5 @@ class Vote_3(models.Model):
         verbose_name_plural = 'رای ها'
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {self.choice.choice_text}"
+        choice_text = self.choice.choice_text if self.choice and self.choice.choice_text else 'No choice'
+        return f"{self.user.first_name} {self.user.last_name} - {self.question.question_text} - {choice_text}"

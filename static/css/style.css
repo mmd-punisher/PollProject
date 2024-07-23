@@ -421,7 +421,6 @@ a.btn_1.rounded,
 }
 
 .content-right {
-  padding: 60px;
   height: 100%;
   min-height: 100%;
   overflow-y: scroll;
@@ -497,10 +496,11 @@ a#logo {
 
 .copy {
   position: absolute;
-  bottom: 25px;
+  bottom: 15px;
   left: 0;
   width: 100%;
   opacity: 0.5;
+  margin-top: 20px;
 }
 
 @media (max-width: 991px) {
@@ -537,7 +537,7 @@ input#website {
 .img-fluid {
   position: absolute;
   width: 90px;
-  margin-top: 2rem;
+  margin-top: -13rem;
   left: 30px;
 }
 
@@ -1238,7 +1238,8 @@ span.error:after {
   border-radius: 3px;
   font-size: 14px;
   font-size: 0.875rem;
-  height: calc(2.55rem + 2px);
+  height: 35px;
+  margin: -10px;
 }
 
 .form-control:focus {
@@ -1668,7 +1669,8 @@ input[type=file]::-webkit-file-upload-button:focus, input[type=file].invalid::-w
   font-family: inherit;
   font-size: 14px;
   font-weight: normal;
-  height: 42px;
+  height: 35px;
+  margin: -10px;
   line-height: 40px;
   outline: none;
   padding-left: 15px;
