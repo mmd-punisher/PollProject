@@ -55,12 +55,12 @@
 
                         <form method="post">
                             {% csrf_token %}
-                            <h2>{{ question.question_text }}</h2>
+                            <h2 style="direction: rtl">{{ question.question_text }}</h2>
 
-                            <div id="form-2-container">
+                            <div id="form-2-container" style="direction: rtl">
                                 {{ form_2.as_p }}
                             </div>
-                            <div id="form-1-container">
+                            <div id="form-1-container" style="direction: rtl">
                                 {{ form.as_p }}
                             </div>
                             {% if question.question_img %}
@@ -70,11 +70,11 @@
                             {% endif %}
                             <div id="form-3-container">
                                 {% for item in forms_3 %}
-                                    <h3>{{ item.question.question_text }}</h3>
+                                    <h3 style="direction: rtl">{{ item.question.question_text }}</h3>
                                     {{ item.form.as_p }}
                                 {% endfor %}
                             </div>
-                            <button type="submit" class="btn-primary">بعدی</button>
+                            <button type="submit" class="btn-primary btn">بعدی</button>
 
 {#                            <button class="button2">#}
 {##}

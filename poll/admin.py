@@ -9,7 +9,7 @@ admin.site.site_title = 'پنل مدیریت نظرسنجی ادمین'
 admin.site.index_title = 'به پنل مدیریت نظرسنجی ادمین خوش آمدید'
 
 
-@admin.action(description='خروجی گرفتن (CSV)')
+@admin.action(description='گرفتن خروجی (CSV)')
 def export_users_to_csv(modeladmin, request, queryset):
     # Define the CSV response
     response = HttpResponse(content_type='text/csv')
@@ -81,7 +81,7 @@ class UserAdmin(admin.ModelAdmin):
     )
     actions = [export_users_to_csv]
     list_filter = (
-        'job', 'education', 'marital_status', 'organ',
+        'education', 'marital_status', 'organ',
         ('vote__date', DateRangeFilter)
     )
     search_fields = ('first_name', 'last_name')
