@@ -74,7 +74,19 @@ def poll_view_2(request, question_id):
         return redirect('user_login')
     user = get_object_or_404(UserModel, pk=user_id)
 
-    question = get_object_or_404(Question_2, pk=question_id)
+    # question = get_object_or_404(Question_2, pk=question_id)
+
+    try:
+        question = Question_2.objects.get(pk=question_id)
+    except Question_2.DoesNotExist:
+        next_question = Question_2.objects.filter(pk__gt=question_id).first()
+        if next_question:
+            question_id = next_question.pk
+            question = next_question
+        else:
+            return redirect('comment')
+
+
     related_questions = Question_3.objects.filter(question_related=question)
 
     try:

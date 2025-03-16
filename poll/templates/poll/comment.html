@@ -26,6 +26,39 @@
     </style>
     <div class="container-fluid full-height">
         <div class="row row-height">
+            <div class="col-lg-6 content-right">
+                <div id="wizard_container">
+                    <div id="middle-wizard">
+                        <div class="submit step">
+                            <h3>
+                                <br>
+                                اتمام بخش دوم
+                            </h3><br>
+                            <h5 dir="rtl" style="color: #a41515;direction: rtl;">
+                                مطمئن باشيد كليه مطالب درج شده در پاسخنامه بصورت
+                                محرمانه
+                                نگهدار ي خواهند شد
+                            </h5>
+                            <br>
+                            <p>
+                                <strong>
+                                    اگر نظر یا پیشنهادی درباره این پرسشنامه دارید، خوشحال میشویم با ما در میان بگذارید
+                                </strong>
+                            </p>
+                            <div class="form-group add_top_30 d-flex custom-form">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {{ form.comment.errors }}
+                                    {{ form.comment }}
+                                    <br>
+                                    <br>
+                                    <button type="submit" id="bottone1"><strong>ثبت نهایی</strong></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6 content-left" id="left">
                 <div class="content-left-wrapper">
                     <div>
@@ -55,40 +88,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-6 content-right">
-                <div id="wizard_container">
-                    <div id="middle-wizard">
-                        <div class="submit step">
-                            <h2 class="main_question d-flex justify-content-end">
-                                اتمام بخش دوم
-                            </h2><br>
-                            <h5 dir="rtl" style="color: darkred;direction: rtl;">
-                                مطمئن باشيد كليه مطالب درج شده در پاسخنامه بصورت
-                                محرمانه
-                                نگهدار ي خواهند شد
-                            </h5>
-                            <br>
-                            <p>
-                                <strong>اگر نظر یا پیشنهادی درباره این پرسشنامه دارید، خوشحال میشویم با ما در میان
-                                    بگذارید</strong>
-                            </p>
-                            <div class="form-group add_top_30 d-flex justify-content-end">
-                                <form method="post">
-                                    {% csrf_token %}
-                                    {{ form.comment.errors }}
-                                    {{ form.comment }}
-                                    <br>
-                                    <br>
-                                    <button type="submit" class="submit btn-primary btn">ثبت</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
-
 {% endblock %}

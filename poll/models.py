@@ -22,13 +22,13 @@ class UserModel(models.Model):
         ('pro', 'تولید'),
         ('ser', 'خدمات'),
     ]
-    GENDER_CHOICE =[
+    GENDER_CHOICE = [
         ('man', 'مرد'),
         ('wom', 'زن'),
         ('otw', 'سایر')
     ]
-    first_name = models.CharField(max_length=255, verbose_name="نام")
-    last_name = models.CharField(max_length=255, verbose_name="نام خانوادگی")
+    first_name = models.CharField(max_length=255, null=True, blank=True, verbose_name="نام")
+    last_name = models.CharField(max_length=255, null=True, blank=True, verbose_name="نام خانوادگی")
     age = models.PositiveSmallIntegerField(verbose_name='سن',
                                            validators=[MinValueValidator(10, message='حداقل سن 10 سال است'),
                                                        MaxValueValidator(150,
@@ -164,7 +164,8 @@ class Vote_2(models.Model):
 
 
 class Question_3(models.Model):
-    question_related = models.ForeignKey(Question_2, on_delete=models.CASCADE, related_name='related_question', verbose_name='سوال مربوط', default='1')
+    question_related = models.ForeignKey(Question_2, on_delete=models.CASCADE, related_name='related_question',
+                                         verbose_name='سوال مربوط', default='1')
     question_title = models.CharField(max_length=255, verbose_name='عنوان سوال')
     question_text = models.CharField(max_length=350, verbose_name='متن سوال')
     pub_date = models.DateTimeField(default=datetime.now, verbose_name='تاریخ انتشار')

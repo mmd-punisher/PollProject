@@ -1,0 +1,331 @@
+#bottone1 {
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 6px;
+    background: #65f3d2;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 12px 24px;
+
+}
+
+#bottone1:hover {
+    box-shadow: 7px 5px 56px -14px #48e3a3;
+}
+
+#bottone1:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #48e3a3;
+}
+
+
+#bottone2 {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 6px;
+    background: #65a7f3;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 12px 24px;
+}
+
+#bottone2:hover {
+    box-shadow: 7px 5px 56px -14px #39a3dc;
+}
+
+#bottone2:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #39a3dc;
+}
+
+/* about us style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+#bottone3 {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 6px;
+    background: #6366f1cc;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 12px 24px;
+}
+
+#bottone3:hover {
+    box-shadow: 7px 5px 56px -14px #4439dc;
+}
+
+#bottone3:active {
+    transform: scale(0.97);
+    box-shadow: 7px 5px 56px -10px #4439dc;
+}
+
+/* about us style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.header-bg {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to right, #6366f1cc, #8b5cf6cc);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/1200x400');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Team Section */
+.team-section {
+    max-width: 1200px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 15px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    height: 180px;
+    position: relative;
+}
+
+.card-header-bg-1 {
+    background: linear-gradient(to right, rgba(241, 158, 99, 0.8), rgba(246, 197, 92, 0.67));
+}
+
+.card-header-bg-2 {
+    background: linear-gradient(to right, rgba(35, 80, 22, 0.67), rgba(130, 241, 99, 0.8));
+}
+
+.card-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/600x200');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+}
+
+.card-content {
+    position: relative;
+    padding: 0 20px 25px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: -70px auto 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgb(245, 204, 142);
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-img2 {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: -70px auto 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #62a973;
+}
+
+.profile-img2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.card-content .position {
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #64bb38;
+    color: white;
+}
+
+.social-link2 {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-link2:hover {
+    background-color: #eab45a;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-card {
+        width: 100%;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+}
+
+.center-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.custom-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-form input,
+.custom-form select,
+.custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    direction: rtl;
+}

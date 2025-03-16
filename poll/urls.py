@@ -6,7 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('admin/', admin.site.urls),
     path('user/login/', views.user_login, name='user_login'),
     path('poll/part-1/<int:question_id>/', views.poll_view, name='poll'),
     path('poll/part-2/<int:question_id>/', views.poll_view_2, name='poll_2'),

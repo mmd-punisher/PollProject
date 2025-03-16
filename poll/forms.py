@@ -71,45 +71,6 @@ class UserForm(forms.ModelForm):
             field.label = ''
 
 
-"""    first_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'نام', 'required': 'required'})
-    )
-    last_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'نام خانوادگی', 'required': 'required'})
-    )
-    age = forms.IntegerField(
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'سن', 'required': 'required'})
-    )
-    job_category = forms.ChoiceField(
-        choices=UserModel.JOB_CAT,
-        widget=forms.Select(attrs={'class': 'form-control', 'placeholder': 'رسته شغلی', 'required': 'required'})
-    )
-    job = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'شغل', 'required': 'required'})
-    )
-    organ = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'نام سازمان', 'required': 'required'})
-    )
-    work_experience = forms.IntegerField(
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'سابقه شغلی', 'required': 'required'})
-    )
-    education = forms.ChoiceField(
-        choices=UserModel.EDUCATION_Choices,
-        widget=forms.Select(attrs={'class': 'form-control', 'placeholder': 'تحصیلات', 'required': 'required'})
-    )
-    marital_status = forms.ChoiceField(
-        choices=UserModel.MARITAL_Choices,
-        widget=forms.Select(attrs={'class': 'form-control', 'placeholder': 'وضعیت تعهد', 'required': 'required'})
-    )
-    height = forms.DecimalField(
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'قد (به سانتی متر)', 'required': 'required'})
-    )
-    weight = forms.DecimalField(
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'وزن (به کیلوگرم)', 'required': 'required'})
-    )
-"""
-
-
 class VoteForm_2(forms.ModelForm):
     choice = forms.ModelChoiceField(
         queryset=Choice_2.objects.none(),
@@ -153,5 +114,10 @@ class CommentForm(forms.ModelForm):
         model = UserModel
         fields = ['comment']
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 12, 'cols': 70, 'dir': 'rtl'})
+            'comment': forms.Textarea(attrs={
+                'rows': 12,
+                'cols': 70,
+                'dir': 'rtl',
+                'placeholder': 'نظرات خود را با ما به اشتراک بگذارید...'
+            }),
         }

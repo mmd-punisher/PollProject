@@ -27,6 +27,31 @@
 
     <div class="container-fluid full-height">
         <div class="row row-height">
+            <div class="col-lg-6 content-right" id="start">
+                <div id="wizard_container">
+                    <h4 class="text-center">لطفا اطلاعات خود را تکمیل کنید</h4>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group required">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger">
+                                        {% for error in field.errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn_1 form-group" id="bottone2"
+                                style="width: 50%; margin-right: 20%; margin-bottom: auto">ثبت نام
+                        </button>
+                    </form>
+                </div>
+            </div>
             <div class="col-lg-6 content-left" id="left">
                 <div class="content-left-wrapper">
                     <div>
@@ -56,31 +81,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 content-right" id="start">
-                <div id="wizard_container">
-                    <h3>لطفا اطلاعات خود را تکمیل کنید</h3>
-
-                    <form method="post">
-                        {% csrf_token %}
-                        {% for field in form %}
-                            <div class="form-group required">
-                                {{ field.label_tag }}
-                                {{ field }}
-                                {% if field.errors %}
-                                    <div class="text-danger">
-                                        {% for error in field.errors %}
-                                            <p>{{ error }}</p>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-
-                        <button type="submit" class="btn_1 form-group" style="width: 50%; margin-right: 29%">ثبت نام</button>
-                    </form>
-                </div>
-            </div>
-
         </div>
     </div>
 

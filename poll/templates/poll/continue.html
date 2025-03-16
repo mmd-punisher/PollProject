@@ -24,6 +24,23 @@
     </style>
     <div class="container-fluid full-height">
         <div class="row row-height">
+            <div class="col-lg-6 content-right">
+                <div id="wizard_container">
+                    <div id="middle-wizard">
+                        <div class="submit step">
+                            <h2 class="main_question d-flex">
+                                <strong></strong>پایان مرحله اول سوالات
+                            </h2><br>
+                            <p>خیلی متشکریم که تا به اینجای کار همراه ما بودید، لطفا برای دیدن سری دوم سوالات و اتمام
+                                پرسشنامه، ادامه دهید</p>
+                        </div>
+                    </div>
+                    <form action="{% url 'poll_2' question_id=1 %}" method="get">
+                        <button type="submit" class="submit btn btn-primary" id="bottone2">ادامه</button>
+                    </form>
+                </div>
+            </div>
+
             <div class="col-lg-6 content-left" id="left">
                 <div class="content-left-wrapper">
                     <div>
@@ -51,21 +68,6 @@
                         </a><br>
                         © 2024 CMDQ
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-6 content-right">
-                <div id="wizard_container">
-                    <div id="middle-wizard">
-                        <div class="submit step">
-                            <h2 class="main_question d-flex justify-content-end">
-                                <strong></strong>پایان مرحله اول سوالات
-                            </h2><br>
-                            <p>خیلی متشکریم که تا به اینجای کار همراه ما بودید، لطفا برای دیدن سری دوم سوالات و اتمام پرسشنامه، ادامه دهید</p>
-                        </div>
-                    </div>
-                    <form action="{% url 'poll_2' question_id=1 %}" method="get">
-                        <button type="submit" class="submit btn btn-primary">ادامه</button>
-                    </form>
                 </div>
             </div>
         </div>

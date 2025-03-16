@@ -14,10 +14,73 @@
         * {
             font-family: "font1";
         }
+
     </style>
 
     <div class="container-fluid full-height">
         <div class="row row-height">
+            <div class="col-lg-6 content-right">
+                <div id="wizard_container">
+                    <div id="middle-wizard">
+
+                        <form method="post">
+                        <br/>
+                        <br/>
+                        <br/>
+                            {% csrf_token %}
+                            <p style="direction: rtl">{{ question.question_text }}</p>
+
+                            <div id="form-2-container" style="direction: rtl">
+                                {{ form_2.as_p }}
+                            </div>
+                            <div id="form-1-container" style="direction: rtl">
+                                {{ form.as_p }}
+                            </div>
+                            {% if question.question_img %}
+                                <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"
+                                     alt="{{ question.question_title }}">
+                            {% else %}
+                            {% endif %}
+                            <br>
+                            <div id="form-3-container">
+                                {% for item in forms_3 %}
+                                    <p style="direction: rtl">{{ item.question.question_text }}</p>
+                                    {{ item.form.as_p }}
+                                {% endfor %}
+                            </div>
+                            <button type="submit" class="btn-primary btn" id="bottone2" onclick="scrollToForm()">بعدی
+                            </button>
+                        </form>
+                    </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const form2Radios = document.querySelectorAll('#form-2-container input[type="radio"]');
+                            const firstRadio = form2Radios[0];
+                            const form3Container = document.getElementById('form-3-container');
+
+                            form2Radios.forEach(radio => {
+                                radio.addEventListener('change', function () {
+                                    if (firstRadio.checked) {
+                                        form3Container.style.display = 'none';
+                                    } else {
+                                        form3Container.style.display = 'block';
+                                    }
+                                });
+                            });
+                        });
+
+                        {#function scrollToForm() {#}
+                        {#    var formContainer = document.getElementById('form-2-container');#}
+                        {#    formContainer.scrollIntoView({behavior: 'smooth', block: 'start'});#}
+                        {#}#}
+                        {##}
+                        {#window.onload = function () {#}
+                        {#    scrollToForm();#}
+                        {#};#}
+                    </script>
+                </div>
+            </div>
             <div class="col-lg-6 content-left" id="left">
 
                 <div class="content-left-wrapper">
@@ -48,91 +111,6 @@
                     </div>
                 </div>
                 <!-- /content-left-wrapper -->
-            </div>
-            <div class="col-lg-6 content-right">
-                <div id="wizard_container">
-                    <div id="middle-wizard">
-
-                        <form method="post">
-                            {% csrf_token %}
-                            <h2 style="direction: rtl">{{ question.question_text }}</h2>
-
-                            <div id="form-2-container" style="direction: rtl">
-                                {{ form_2.as_p }}
-                            </div>
-                            <div id="form-1-container" style="direction: rtl">
-                                {{ form.as_p }}
-                            </div>
-                            {% if question.question_img %}
-                                <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"
-                                     alt="{{ question.question_title }}">
-                            {% else %}
-                            {% endif %}
-                            <div id="form-3-container">
-                                {% for item in forms_3 %}
-                                    <h3 style="direction: rtl">{{ item.question.question_text }}</h3>
-                                    {{ item.form.as_p }}
-                                {% endfor %}
-                            </div>
-                            <button type="submit" class="btn-primary btn">بعدی</button>
-
-{#                            <button class="button2">#}
-{##}
-{##}
-{#                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"#}
-{#                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">#}
-{#                                    <path stroke-linecap="round" stroke-linejoin="round"#}
-{#                                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>#}
-{#                                </svg>#}
-{##}
-{##}
-{#                                <div class="text2">#}
-{#                                    Button#}
-{#                                </div>#}
-{##}
-{#                            </button>#}
-                        </form>
-                    </div>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const form2Radios = document.querySelectorAll('#form-2-container input[type="radio"]');
-                            const firstRadio = form2Radios[0];
-                            const form3Container = document.getElementById('form-3-container');
-
-                            form2Radios.forEach(radio => {
-                                radio.addEventListener('change', function () {
-                                    if (firstRadio.checked) {
-                                        form3Container.style.display = 'none';
-                                    } else {
-                                        form3Container.style.display = 'block';
-                                    }
-                                });
-                            });
-                        });
-                    </script>
-
-                    {#                    <div id="middle-wizard">#}
-                    {##}
-                    {#                        <form method="post">#}
-                    {#                            {% csrf_token %}#}
-                    {#                            <h2>{{ question.question_text }}</h2>#}
-                    {##}
-                    {#                            {{ form_2.as_p }}#}
-                    {#                            {{ form.as_p }}#}
-                    {#                            {% if question.question_img %}#}
-                    {#                                <img class="img-fluid" style="position:absolute;" src="{{ question.question_img.url }}"#}
-                    {#                                     alt="{{ question.question_title }}">#}
-                    {#                            {% else %}#}
-                    {#                            {% endif %}#}
-                    {#                            {% for item in forms_3 %}#}
-                    {#                                <h3>{{ item.question.question_text }}</h3>#}
-                    {#                                {{ item.form.as_p }}#}
-                    {#                            {% endfor %}#}
-                    {#                            <button type="submit" class="">بعدی</button>#}
-                    {#                        </form>#}
-                    {#                    </div>#}
-                </div>
             </div>
         </div>
     </div>
