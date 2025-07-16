@@ -26,6 +26,16 @@ CMDQ is a survey-based project designed to help supervisors and employers monito
 
 This project aims to support occupational health initiatives by providing a streamlined way to collect and analyze workers' musculoskeletal discomfort reports.
 
+
+## Project Shots
+
+<img width="1456" height="657" alt="image" src="https://github.com/user-attachments/assets/9eb56ef2-390b-4c50-b909-0656977caffb" />
+
+<img width="1451" height="658" alt="image" src="https://github.com/user-attachments/assets/9874a07f-4a3d-47bf-aabb-af6e34099e5c" />
+
+<img width="1449" height="712" alt="image" src="https://github.com/user-attachments/assets/dda06677-fe87-4a86-998d-e87a1e3104e0" />
+
+
 ## License
 
 This project is open-source and available under the MIT License.
