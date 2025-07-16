@@ -1,3 +1,37 @@
+# CMDQ - Musculoskeletal Health Survey System
+
+CMDQ is a survey-based project designed to help supervisors and employers monitor musculoskeletal complaints reported by their workforce. The system collects self-reported data regarding muscle discomfort, pain, and related issues, providing useful insights to assist with occupational health management.
+
+## Features
+
+- **Employee Health Monitoring:** Enables tracking of musculoskeletal issues reported by workers.
+- **Survey-Based Data Collection:** Based on the standard CMDQ (Cornell Musculoskeletal Discomfort Questionnaire).
+- **User-Friendly Interface:** Simple and accessible UI for participants.
+- **Admin Dashboard:** 
+  - View aggregated and individual reports.
+  - Powerful filtering options to analyze specific groups of workers.
+  - Export reports and filtered data to CSV files.
+  - Comprehensive data management tools for supervisors.
+
+## Tech Stack
+
+- **Frontend:** Developed by [Alireza Esmaeili](https://github.com/BAADEH)
+- **Backend:** Developed by [Mohammad Moosapour](https://github.com/mmd-punisher)
+
+## Project Repository
+
+[PollProject on GitHub](https://github.com/mmd-punisher/PollProject)
+
+## Purpose
+
+This project aims to support occupational health initiatives by providing a streamlined way to collect and analyze workers' musculoskeletal discomfort reports.
+
+## License
+
+This project is open-source and available under the MIT License.
+
+
+
 ## Excel Settings To Set On Your Device
 
 This is a problem I face frequently with Microsoft Excel when opening CSV files that contain Arabic characters. Try the
