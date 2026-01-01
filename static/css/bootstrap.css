@@ -2336,8 +2336,6 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
-  margin: -10px;
-  height: 35px;
 }
 
 .btn-primary:hover {
