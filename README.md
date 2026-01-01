@@ -53,3 +53,9 @@ following workaround that I tested on latest versions of Microsoft Excel on both
 4. In the Text Import Wizard, change the File_origin to "Unicode (UTF-8)"
 5. Go next and from the Delimiters, select the delimiter used in your file e.g. comma
 6. Finish and select where to import the data
+
+
+## Contributors
+- Mohammad Mousapour
+- Alireza Esmaeili
+
